@@ -1,5 +1,10 @@
-var express = require('express');
-var app = express();
+import app from './app.js';
+app.listen(app.get('port'));
+
+import './database/conexion.js'
+
+console.log("Server on port",app.get('port'))
+/*
 const mssql = require("mssql");
 
 var config = {
@@ -14,17 +19,21 @@ var config = {
   }
 }
 
+app.set('port',500)
+
+let resultadoEscuelas;
+let res;
+
 mssql.connect(config,err=>{
   if(err){
     throw err;
   }
-  console.log("Conexión Exitosa!");
+  console.log("Conexión Exitosa en el puerto "+ app.get('port') +"!");
 
-  new mssql.query('Select * from ESCUELAS where idMunicipio = 17;', (err,results)=>{
-    var resultado = results.recordset;
-    console.dir(resultado);
-    for(let item of resultado){
-      console.log("El dato consta de la institución "+ item.nombre +" y su código común de trabajo es: "+item.CCT);
+  resultadoEscuelas = new mssql.query('Select * from ESCUELAS where idMunicipio = 17;', (err,results)=>{
+    res = results.recordset;
+    for(let item of res){
+      //console.log("El dato consta de "+ item.nombre + "y su código común de trabajo es: " + item.CCT);
     }
   })
 });
@@ -32,3 +41,5 @@ mssql.connect(config,err=>{
 mssql.on('error', err =>{
   console.log("Sql database connection error ",err);
 })
+
+*/
