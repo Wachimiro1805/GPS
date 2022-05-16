@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "Carpeta para almacenar los paquetes y extensiones de node.js del pryecto",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"nodemon index.js --exec babel-node"
+    "dev": "nodemon index.js --exec babel-node"
   },
   "author": "Martín Hoyos",
   "license": "ISC",
@@ -23,6 +23,7 @@
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.17.10",
     "@babel/node": "^7.17.10",
+    "@babel/plugin-transform-runtime": "^7.17.10",
     "@babel/preset-env": "^7.17.10",
     "nodemon": "^2.0.16"
   }

@@ -1,0 +1,10 @@
+GET http://localhost:3000/denuncias
+
+###
+
+GET http://localhost:3000/escuelas
+
+###
+
+
+get http://localhost:3000/escuelas/17
