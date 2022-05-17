@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import config from './config.js';
 
 import denunciaRuta from './routes/Denuncias.routes.js'
@@ -7,6 +8,8 @@ import escuelaRuta from './routes/Escuelas.routes.js';
 const app = express();
 
 app.set('port', config.port);
+
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
