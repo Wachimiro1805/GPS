@@ -7,9 +7,16 @@
   box-sizing: border-box;
 }
 
+nav{
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
 body {
     min-height: 40rem;
-    padding-top: 4.5rem;
+    padding-top: 10rem;
   }
 
 

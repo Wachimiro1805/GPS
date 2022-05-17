@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 
+
+
+
+
 /* Se retira el margen y el padding al rededor del body. Se establece la altura del body al mismo tamaño del alto de la pantalla. Se alinea todo al centro, tanto en el eje horizontal como en el eje vertical*/
 
 body {
@@ -87,7 +91,7 @@ tr:nth-child(even) {
   tr td:first-child {
       background: #f0f0f0;
       font-weight:bold;
-      font-size:1.3em;
+      font-size: 1rem;
   }
   tbody td {
       display: block;
@@ -108,3 +112,5 @@ tr:nth-child(even) {
 		td:nth-of-type(1):before { content: "Nombre"; }
 		td:nth-of-type(2):before { content: "Edad"; }
 		td:nth-of-type(3):before { content: "Lenguaje"; }
+
+    
