@@ -7,4 +7,4 @@ GET http://localhost:3000/escuelas
 ###
 
 
-get http://localhost:3000/escuelas/17
+get http://localhost:3000/escuelas/3
