@@ -1,20 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 
-
-
-
-
 /* Se retira el margen y el padding al rededor del body. Se establece la altura del body al mismo tamaño del alto de la pantalla. Se alinea todo al centro, tanto en el eje horizontal como en el eje vertical*/
 
 body {
-  margin: 0;
-  height: 100vh;
-  padding-top: 10rem;
-  font-family: "lato", sans-seriff;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
+
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #455a64;
+  line-height: 1.5;
+  
 }
 
 /* Se remueven los bordes del input. Se establece un ancho igual que el elemento padre y se establece un margen en la parte inferior */
@@ -37,9 +33,15 @@ body {
 
 /* Establece el ancho del contenedor de la tabla (div) en un 80% del ancho de la ventana del navegador y el alto a un 100% del alto de la ventana del navegador. `vh` y `vw` hace responsiva a la table debido a que la escala proporcionalmente al tamaño de la ventana del navegador. Además, establece un margen de 20px en la parte superior y en la parte inferior */
 .app {
-  width: 80vw;
-  height: 100vh;
+  width: auto;
+  height: auto;
   margin: 20px 0;
+
+  font-family: "lato", sans-seriff;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
 }
 
 /* Colapsa todos los bordes que separan a cada celda. La tabla ocupa todo el ancho de ".app", además se establece una sobra gris alrededor de la tabla */
@@ -80,37 +82,48 @@ tr:nth-child(even) {
 
 @media screen and (max-width: 600px) {
   table {
-      width:100%;
+    width: 100%;
   }
+
   thead {
-      display: none;
+    display: none;
   }
+
   tr:nth-of-type(2n) {
-      background-color: inherit;
+    background-color: inherit;
   }
+
   tr td:first-child {
-      background: #f0f0f0;
-      font-weight:bold;
-      font-size: 1rem;
+    background: #f0f0f0;
+    font-weight: bold;
+    font-size: 1rem;
   }
+
   tbody td {
-      display: block;
-      text-align:center;
+    display: block;
+    text-align: center;
   }
+
   tbody td:before {
-      content: attr(data-th);
-      display: block;
-      text-align:center;
+    content: attr(data-th);
+    display: block;
+    text-align: center;
   }
 }
 
 
-		/*
+/*
 		Label the data
     You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
 		*/
-		td:nth-of-type(1):before { content: "Nombre"; }
-		td:nth-of-type(2):before { content: "Edad"; }
-		td:nth-of-type(3):before { content: "Lenguaje"; }
+td:nth-of-type(1):before {
+  content: "Nombre";
+}
 
-    
+td:nth-of-type(2):before {
+  content: "Edad";
+}
+
+td:nth-of-type(3):before {
+  content: "Lenguaje";
+}
