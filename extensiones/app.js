@@ -6,6 +6,7 @@ import denunciaRuta from './routes/Denuncias.routes.js'
 import escuelaRuta from './routes/Escuelas.routes.js';
 import denuncianteRuta from './routes/Denunciante.routes.js'
 import abusadorRuta from './routes/Abusador.routes.js'
+import municipiosRuta from './routes/Municipios.routes.js'
 
 const app = express();
 
@@ -20,5 +21,6 @@ app.use(denunciaRuta);
 app.use(escuelaRuta);
 app.use(denuncianteRuta);
 app.use(abusadorRuta);
+app.use(municipiosRuta);
 
 export default app;

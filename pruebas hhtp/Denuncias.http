@@ -2,9 +2,24 @@ GET http://localhost:3000/denuncias
 
 ###
 
-GET http://localhost:3000/escuelas
+get http://localhost:3000/escuelas
 
 ###
 
+get http://localhost:3000/escuelasPM/17
 
-get http://localhost:3000/escuelas/3
+###
+
+get http://localhost:3000/escuelasPN/Media S
+
+###
+
+get http://localhost:3000/escuelasPN/Superior
+
+###
+
+get http://localhost:3000/escuelas/17&Superior
+
+###
+
+get http://localhost:3000/municipios
