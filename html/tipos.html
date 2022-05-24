@@ -34,135 +34,175 @@
 
 <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-<body>
-  <!--NAVBAR-->
-  <nav class="navbar navbar-expand-md navbar-light fixed-top " style="background-color: #def7eb;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/index.html"><img src="/images/logo.png" width="150" height="100"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link" href="/index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/html/tipos.html">¿Qué es la violencia?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/html/denuncias.html">Denuncias</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/estadisticas.html">Estadísticas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/html/Login.html"><img src="/images/icono.png" height="35"></a>
-          </li>
-        </ul>
-      </div>
+
+<!--NAVBAR-->
+<nav class="navbar navbar-expand-md navbar-light fixed-top " style="background-color: #def7eb;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/index.html"><img src="/images/logo.png" width="150" height="100"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/html/tipos.html">¿Qué es la violencia?</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/html/denuncias.html">Denuncias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/estadisticas.html">Estadísticas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/html/Login.html"><img src="/images/icono.png" height="35"></a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
+<body>
   <div class="container">
-    <div class="row" style="background-color: #ADF1C4;">
-      <div class="col-sm py-3 px-lg-5 border">
-        <h1 class="display-6">Entidades para buscar soporte</h1>
-        <p>
-          Algunas entidades que puedan ayudar son:
-          <br>Centro de Apoyo Sociojurídico a Víctimas del Delito Violento (ADEVI),
-          Centro de Atención a la Violencia Intrafamiliar (CAVI),
-          <br>Centro de Atención a Riesgos Victimales y Adicciones (CARIVA),
-          Centro de Investigación Victimológica y de Apoyo Operativo (CIVA),
-          <br>Centros de Justicia para las Mujeres,
-          Centro de Terapia de Apoyo a Víctimas de Delitos Sexuales (CTA),
-          Instancias de Mujeres en Entidades Federativas (Alas para el Cambio)
-          <br>Programa Psicoterapéutico Vía Telefónica – Línea Mujeres,
-          Secretaría de Inclusión y Bienestar Social (SIBISO),
-          <br>Programa Viaja Segura
-        </p>
-      </div>
 
-      <div class="row" style="background-color: #ADF1C4;">
-        <div class="col-sm py-3 px-lg-5 border">
-          <h1 class="display-6">Violencia Verbal/Psicológica</h1>
-          <p>
-            La violencia verbal o psicológica es un tipo de violencia que consiste en usar sus palabras
+    <!--23/05/20222 15:56 CAMBIOS TARJETAS-->
+
+    <h1>Nuestro equipo de expertos</h1>
+    <p class="descripcion">Lorem Ipsum es simplemente texto de relleno de la industria de la impresión y la
+      composición
+      tipográfica</p>
+
+    <!-- <div class="modo" id="modo">
+          <i class="fas fa-toggle-on"></i>
+      </div> -->
+
+    <section class="card">
+      <div class="card__perfil">
+        <div class="card__nombre">
+          <img class="imagen-tipos" src="/images/verbal-violence.jpg" alt="">
+        </div>
+
+        <div class="card__descripcion">
+          <h2>Violencia Verbal/Psicológica</h2>
+          <hr>
+          <p>La violencia verbal o psicológica es un tipo de violencia que consiste en usar sus palabras
             para asaltar, dominar, ridiculizar, manipular y/o degradar a otra persona, con un impacto negativo a su
-            salud mental.
-            Esta violencia puede ocurrir en cualquier tipo de relación, ya sea personal o laboral, además de ser un
-            indicador posible
-            de violencia física inminente.
-            <p> Esta violencia puede tomar varias formas, como bromas hirientes, apodos ofensivos,
-              engaños, ignorar, celar, culpabilizar, descalificar, ridiculizar, ofender, humillación pública, prohibir,
-              restringir,
-              amenazas, entre otros.
-              Consecuencias del abuso verbal incluyen: Ansiedad, Cambios de ánino, Estrés crónico, Baja autoestima,
-              Depresión, Desorden de Estrés Posttraumático, Aislamiento, entre otros.
-            </p>
-        </div>
-        <div class="col-md-auto">
-          <img src="/images/verbal-violence.jpg"
-            class="rounded img-thumbnail mx-auto d-block img-fluid col align-self-center" height="400" width="400">
+            salud mental.</p>
+          <p>Esta violencia puede ocurrir en cualquier tipo de relación, ya sea personal o laboral, además de ser un
+            indicador posible de violencia física inminente.</p>
+          <p>Esta violencia puede tomar varias formas, como bromas hirientes, apodos ofensivos,
+            engaños, ignorar, celar, culpabilizar, descalificar, ridiculizar, ofender, humillación pública, prohibir,
+            restringir,
+            amenazas, entre otros.
+            Consecuencias del abuso verbal incluyen: Ansiedad, Cambios de ánino, Estrés crónico, Baja autoestima,
+            Depresión, Desorden de Estrés Posttraumático, Aislamiento, entre otros.</p>
+          <hr>
+          <div class="card__button">
+            <a class="enlace" href="#">Saber más</a>
+          </div>
         </div>
       </div>
-      <div class="row" style="background-color: #ADF1C4;">
-        <div class="col-sm py-3 px-lg-5 border">
-          <h1 class="display-6">Violencia Patrimonial</h1>
-          La violencia patrimonial se define como cualquier acto que afecta la situación patrimonial de la victima. Esto
-          se refiere
-          a actos que retengan, limiten, destruyan, transformen el patrimonio de la victima. El patrimonio se define
-          como
-          objetos que pertenecen a la victima, como documentos personales, bienes, valores, derechos patrimoniales y
-          recursos económicos
+      <!-- 2 tarjeta -->
+      <div class="card__perfil">
+        <div class="card__nombre">
+          <img class="imagen-tipos" src="/images/violencia-patrimonial.jpg" alt="">
         </div>
-        <div class="col-md-auto">
-          <img src="/images/violencia-patrimonial.jpg" class="rounded float-end img-fluid img-thumbnail">
-        </div>
-      </div>
-      <div class="row" style="background-color: #ADF1C4;">
-        <div class="col-sm py-3 px-lg-5 border">
-          <h1 class="display-6">Violencia Física</h1>
-          La violencia física es una acción voluntaria y física que ocasiona daños a una victima. Estos daños pueden ser
-          externos (moretones, cortadas) y/o
-          internos (sangrado interno, huesos rotos). El agresor puede usar esta violencia con o sin un objeto para
-          facilitar sus impactos.
-          Algunos tipos de violencias físicas son:
-          Dar de sapes, golpear mientras se juega, pellizcar, arañazos, empujones, jalones, forcejeos, cachetadas,
-          pateas, aislamiento y confinamiento forzado.
 
-        </div>
-        <div class="col-md-auto">
-          <img src="/images/violencia-fisica.jpg" class="rounded float-end img-fluid img-thumbnail" height="400"
-            width="400">
+        <div class="card__descripcion">
+          <h2>Violencia Patrimonial</h2>
+          <hr>
+          <p>La violencia patrimonial se define como cualquier acto que afecta la situación patrimonial de la victima.
+            Esto
+            se refiere a actos que retengan, limiten, destruyan, transformen el patrimonio de la victima. El
+            patrimonio se define
+            como objetos que pertenecen a la victima, como documentos personales, bienes, valores, derechos
+            patrimoniales y
+            recursos económicos</p>
+          <hr>
+          <div class="card__button">
+            <a class="enlace" href="#">Saber más</a>
+          </div>
         </div>
       </div>
-      <div class="row" style="background-color: #ADF1C4;">
-        <div class="col-sm py-3 px-lg-5 border">
-          <h1 class="display-6">Violencia Sexual</h1>
-          La violencia sexual se define como actos y violencias, como verbal, con una naturaleza enfocada al aspecto
-          sexual de la victima,
-          Esta violencia puede estar presente en diferentes tipos de violencia, ya que los siguientes actos son
-          violencias sexuales de diferente tipos:
-          Coerción para forzar actos sexuales puede caer bajo violencia verbal, y si se privan recursos para forzar el
-          acto, es patrimonial, mientras que
-          una penetración forzada es violencia física.
+      <!-- 3 tarjeta -->
+      <div class="card__perfil">
+        <div class="card__nombre">
+          <img class="imagen-tipos" src="/images/violencia-fisica.jpg" alt="">
+        </div>
+
+        <div class="card__descripcion">
+          <h2>Violencia Física</h2>
+          <hr>
+          <p>La violencia física es una acción voluntaria y física que ocasiona daños a una victima. Estos daños
+            pueden ser
+            externos (moretones, cortadas) y/o
+            internos (sangrado interno, huesos rotos). El agresor puede usar esta violencia con o sin un objeto para
+            facilitar sus impactos.
+            Algunos tipos de violencias físicas son:
+            Dar de sapes, golpear mientras se juega, pellizcar, arañazos, empujones, jalones, forcejeos, cachetadas,
+            pateas, aislamiento y confinamiento forzado.</p>
+          <hr>
+          <div class="card__button">
+            <a class="enlace" href="#">Saber más</a>
+          </div>
+        </div>
+      </div>
+      <!-- 4 tarjeta -->
+      <div class="card__perfil">
+        <div class="card__nombre">
+          <img class="imagen-tipos" src="/images/sexual-assault.jpg" alt="">
+        </div>
+
+        <div class="card__descripcion">
+          <h2>Violencia Sexual</h2>
+          <hr>
+          <p>La violencia sexual se define como actos y violencias, como verbal, con una naturaleza enfocada al
+            aspecto
+            sexual de la victima,
+            Esta violencia puede estar presente en diferentes tipos de violencia, ya que los siguientes actos son
+            violencias sexuales de diferente tipos:
+            Coerción para forzar actos sexuales puede caer bajo violencia verbal, y si se privan recursos para forzar
+            el
+            acto, es patrimonial, mientras que
+            una penetración forzada es violencia física.</p>
           <p>
-            Unos ejemplos de violencias sexuales son: Piropos, miradas lascivas, coerción de calificaciones a cambio de
+            Unos ejemplos de violencias sexuales son: Piropos, miradas lascivas, coerción de calificaciones a cambio
+            de
             favores sexuales,
             manoseos, difusión de fotografías/videos íntimos, difusión de contenido sexual sin consentimiento, tomar
             fotografías/videos íntimos
             sin consentimiento, amenazas de difusión y la difusión de contenido íntimo, relaciones sexuales
             forzadas/violación, entre otros.
           </p>
+          <hr>
+          <div class="card__button">
+            <a class="enlace" href="#">Saber más</a>
+          </div>
         </div>
-        <div class="col-md-auto">
-          <img src="/images/sexual-assault.jpg" class="rounded float-end img-fluid img-thumbnail" height="400"
-            width="400">
-        </div>
-      </div>
+    </section>
+
+
+    <div class="col-sm py-3 px-lg-5 border">
+      <h1 class="display-6">Entidades para buscar soporte</h1>
+      <p>
+        Algunas entidades que puedan ayudar son:
+        <br>Centro de Apoyo Sociojurídico a Víctimas del Delito Violento (ADEVI),
+        Centro de Atención a la Violencia Intrafamiliar (CAVI),
+        <br>Centro de Atención a Riesgos Victimales y Adicciones (CARIVA),
+        Centro de Investigación Victimológica y de Apoyo Operativo (CIVA),
+        <br>Centros de Justicia para las Mujeres,
+        Centro de Terapia de Apoyo a Víctimas de Delitos Sexuales (CTA),
+        Instancias de Mujeres en Entidades Federativas (Alas para el Cambio)
+        <br>Programa Psicoterapéutico Vía Telefónica – Línea Mujeres,
+        Secretaría de Inclusión y Bienestar Social (SIBISO),
+        <br>Programa Viaja Segura
+      </p>
     </div>
+
+  </div>
   </div>
 </body>
 
