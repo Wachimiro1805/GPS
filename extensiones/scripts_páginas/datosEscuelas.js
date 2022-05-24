@@ -1,4 +1,5 @@
-document.querySelector('#btnFiltrar').addEventListener('click',escogerSolicitudEscuelas);
+document.querySelector('#municipio').addEventListener('change',escogerSolicitudEscuelas);
+document.querySelector('#nivel').addEventListener('change',escogerSolicitudEscuelas);
 
 recuperarEscuelas();
 
@@ -15,7 +16,7 @@ function recuperarEscuelas(){
 
             //console.log(datos);
 
-            let schools = document.querySelector('#schools');
+            let schools = document.querySelector('#escuela');
 
             schools.innerHTML = '<option value="">Seleccione una Institución</option>';
             for(let item of datos){
@@ -30,7 +31,7 @@ function recuperarEscuelas(){
 
 function escogerSolicitudEscuelas(){
    var nivel = document.querySelector('#nivel');
-   var municipio = document.querySelector('#municipios');
+   var municipio = document.querySelector('#municipio');
 
    if(nivel.value != "" && municipio.value != ""){
     recuperarEscuelasPorNivelYMunicipio(municipio.value, nivel.value)
@@ -55,7 +56,7 @@ function recuperarEscuelasDeUnMunicipio(valor){
         if(this.readyState == 4 && this.status == 200){
             let datos = JSON.parse(this.responseText);
 
-            let schools = document.querySelector('#schools');
+            let schools = document.querySelector('#escuela');
 
             schools.innerHTML = '<option value="">Seleccione una Institución</option>';
             for(let item of datos){
@@ -81,7 +82,7 @@ function recuperarEscuelasPorNivel(valor){
         if(this.readyState == 4 && this.status == 200){
             let datos = JSON.parse(this.responseText);
 
-            let schools = document.querySelector('#schools');
+            let schools = document.querySelector('#escuela');
 
             schools.innerHTML = '<option value="">Seleccione una Institución</option>';
             for(let item of datos){
@@ -106,7 +107,7 @@ function recuperarEscuelasPorNivelYMunicipio(valor1, valor2){
         if(this.readyState == 4 && this.status == 200){
             let datos = JSON.parse(this.responseText);
 
-            let schools = document.querySelector('#schools');
+            let schools = document.querySelector('#escuela');
 
             schools.innerHTML = '<option value="">Seleccione una Institución</option>';
             for(let item of datos){

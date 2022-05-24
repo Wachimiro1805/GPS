@@ -14,17 +14,17 @@ try {
 };
 
 export const putDenuncias = async(req,res) => {
-    const { hechos, fechaDenuncia, estadoDenuncia, idDenunciante, 
-        idAbusador, id, idEscuela, ACCIONTOMADA, SERVICIOADD, 
+    const { hechos, fechaDenuncia, idDenunciante, 
+        idAbusador, idEscuela, ACCIONTOMADA, SERVICIOADD, 
         INFOTIPOSVIOLENCIA, MECANISMOSDENUNCIAS, TEMPORALIDAD,
-        ZONA, NIVELGRAVEDAD, TIPOVIOLENCIA } = req.body;
+        ZONA, NIVELGRAVEDAD, TIPOVIOLENCIA, SUCEDIOALGO } = req.body;
     
-    if(hechos == null || fechaDenuncia == null || estadoDenuncia == null ||
-        idDenunciante == null || idAbusador == null || id ==null ||
+    if(hechos == null || fechaDenuncia == null ||
+        idDenunciante == null || idAbusador == null ||
         idEscuela == null || ACCIONTOMADA == null || SERVICIOADD == null ||
         INFOTIPOSVIOLENCIA == null || MECANISMOSDENUNCIAS == null ||
         TEMPORALIDAD == null || ZONA == null || NIVELGRAVEDAD == null ||
-        TIPOVIOLENCIA == null){
+        TIPOVIOLENCIA == null || SUCEDIOALGO == null){
         return res.status(400).json({msg : 'Uno o más campos vacíos'})
     }
     try {
@@ -33,10 +33,8 @@ export const putDenuncias = async(req,res) => {
         await pool.request()
             .input("hechos", sql.text,hechos)
             .input("fechaDenuncia", sql.date, fechaDenuncia)
-            .input("estadoDenuncia",sql.VarChar,estadoDenuncia)
             .input("idDenunciante",sql.Int,idDenunciante)
             .input("idAbusador",sql.Int,idAbusador)
-            .input("id",sql.TinyInt,id)
             .input("idEscuela",sql.Int,idEscuela)
             .input('ACCIONTOMADA',sql.Text,ACCIONTOMADA)
             .input('SERVICIOADD',sql.VarChar,SERVICIOADD)
@@ -46,10 +44,11 @@ export const putDenuncias = async(req,res) => {
             .input('ZONA',sql.VarChar,ZONA)
             .input('NIVELGRAVEDAD',sql.VarChar,NIVELGRAVEDAD)
             .input('TIPOVIOLENCIA',sql.VarChar,TIPOVIOLENCIA)
+            .input('SUCEDIOALGO',sql.VarChar,SUCEDIOALGO)
             .query(queries.registerNewDenuncia);
     
-        res.json({hechos, fechaDenuncia, estadoDenuncia, idDenunciante, 
-        idAbusador, id, idEscuela, ACCIONTOMADA, SERVICIOADD, 
+        res.json({hechos, fechaDenuncia, idDenunciante, 
+        idAbusador, idEscuela, ACCIONTOMADA, SERVICIOADD, 
         INFOTIPOSVIOLENCIA, MECANISMOSDENUNCIAS, TEMPORALIDAD,
         ZONA, NIVELGRAVEDAD, TIPOVIOLENCIA});
     
@@ -83,18 +82,18 @@ export const deleteDenuncia = async (req,res) => {
 }
 
 export const updateDenuncia = async (req, res) => {
-    const { hechos, fechaDenuncia, estadoDenuncia, idDenunciante, 
-        idAbusador, id, idEscuela, ACCIONTOMADA, SERVICIOADD, 
+    const { hechos, fechaDenuncia, idDenunciante, 
+        idAbusador, idEscuela, ACCIONTOMADA, SERVICIOADD, 
         INFOTIPOSVIOLENCIA, MECANISMOSDENUNCIAS, TEMPORALIDAD,
-        ZONA, NIVELGRAVEDAD, TIPOVIOLENCIA } = req.body;
+        ZONA, NIVELGRAVEDAD, TIPOVIOLENCIA, SUCEDIOALGO } = req.body;
     const {idDenuncia} = req.params;
 
-    if(hechos == null || fechaDenuncia == null || estadoDenuncia == null ||
-        idDenunciante == null || idAbusador == null || id ==null ||
+    if(hechos == null || fechaDenuncia == null || 
+        idDenunciante == null || idAbusador == null || 
         idEscuela == null || ACCIONTOMADA == null || SERVICIOADD == null ||
         INFOTIPOSVIOLENCIA == null || MECANISMOSDENUNCIAS == null ||
         TEMPORALIDAD == null || ZONA == null || NIVELGRAVEDAD == null ||
-        TIPOVIOLENCIA == null){
+        TIPOVIOLENCIA == null || SUCEDIOALGO == null){
         return res.status(400).json({msg : 'Uno o más campos vacíos'})
     }
 
@@ -102,10 +101,8 @@ export const updateDenuncia = async (req, res) => {
     const result = await pool.request()
         .input("hechos", sql.text,hechos)
         .input("fechaDenuncia", sql.date, fechaDenuncia)
-        .input("estadoDenuncia",sql.VarChar,estadoDenuncia)
         .input("idDenunciante",sql.Int,idDenunciante)
         .input("idAbusador",sql.Int,idAbusador)
-        .input("id",sql.TinyInt,id)
         .input("idEscuela",sql.Int,idEscuela)
         .input('ACCIONTOMADA',sql.Text,ACCIONTOMADA)
         .input('SERVICIOADD',sql.VarChar,SERVICIOADD)
@@ -116,6 +113,7 @@ export const updateDenuncia = async (req, res) => {
         .input('NIVELGRAVEDAD',sql.VarChar,NIVELGRAVEDAD)
         .input('TIPOVIOLENCIA',sql.VarChar,TIPOVIOLENCIA)
         .input('idDenuncia',sql.Int,idDenuncia)
+        .input('SUCEDIOALGO',sql.VarChar,SUCEDIOALGO)
         .query(queries.updateDenuncia);
     res.json(result.recordset)
 }

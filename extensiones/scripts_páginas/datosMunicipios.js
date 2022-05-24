@@ -13,7 +13,7 @@ function recuperarMunicipios(){
 
             //console.log(datos);
 
-            let muni = document.querySelector('#municipios');
+            let muni = document.querySelector('#municipio');
 
             muni.innerHTML = '<option value="">Seleccione Un Municipio</option>';
             for(let item of datos){
