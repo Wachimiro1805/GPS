@@ -86,6 +86,8 @@ footer {
   }
 }
 
+
+
 /* NUEVO FORMATO DE TARJETAS DE TIPOS ------------------------------------------------- */
 
 * {
@@ -168,8 +170,7 @@ h1 {
 }
 
 .imagen-violencia {
-  width: 17rem;
-  align-items: center;
+  width: 20rem;
 }
 
 
@@ -201,16 +202,17 @@ hr {
 details {
   font-size: 1rem;
   margin: 2em auto;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
   background: #ffffff;
   border-radius: 8px;
 
-  width: 700px;
+  width: 50rem;
 }
 
-details[open] > summary {
-  color:coral;
+details[open]>summary {
+  color: coral;
 }
 
 details:hover {
@@ -259,16 +261,97 @@ summary::-webkit-details-marker {
 
 
 
-@media (min-width: 768px) {
+@media (max-width: 1200px) {
 
+
+  /*Ajuste de la pantalla Movil de  Tipos de Violencia*/
+
+  .card {
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  p {
+    padding: 1em;
+  }
+
+  .card__perfil {
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 1px 1px 5px rgb(201, 201, 201);
+    border: solid rgba(3, 133, 255, 0) 2px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .card__perfil:hover {
+    border: solid rgb(3, 133, 255) 2px;
+  }
+
+  .card__perfil:hover img {
+    filter: opacity(.5);
+    transition: all 1s ease-in-out;
+
+
+
+  }
+
+  .imagen-tipos {
+    width: 500px;
+    border-radius: 10%;
+    box-shadow: 1px 1px 2px rgb(216, 216, 216);
+    transition: all .3s;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .card__nombre {
+
+    gap: 5px;
+    padding-top: 1rem;
+
+  }
+
+  .card__descripcion {
+    padding: 1rem;
+    gap: 5px;
+
+  }
+
+  .card__descripcion:hover {
+    width: 100%;
+    transition: width .4s;
+  }
+
+  .imagen-violencia {
+    width: 20rem;
+  }
+
+  details {
+    font-size: 1rem;
+    padding: 1rem;
+    margin: 2em auto;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+    background: #ffffff;
+    border-radius: 8px;
+
+    width: 18rem;
+  }
 
   details[open]>p {
     animation-name: slideDown;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
   }
-
-
 }
 
 @keyframes slideDown {
@@ -284,6 +367,9 @@ summary::-webkit-details-marker {
     padding: 20px;
   }
 }
+
+
+
 
 
 /*link*/
