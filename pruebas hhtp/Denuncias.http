@@ -1,0 +1,81 @@
+GET http://localhost:3000/denuncias
+
+###
+
+get http://localhost:3000/escuelas
+
+###
+
+get http://localhost:3000/escuelasPM/17
+
+###
+
+get http://localhost:3000/escuelasPN/Media S
+
+###
+
+get http://localhost:3000/escuelasPN/Superior
+
+###
+
+get http://localhost:3000/escuelas/17&Superior
+
+###
+
+get http://localhost:3000/municipios
+
+###
+
+post http://localhost:3000/denuncias
+Content-Type: application/json
+
+{
+    "hechos":"Bullying",
+    "fechaDenuncia":"05-24-2022",
+    "idDenunciante":1,
+    "idAbusador":1,
+    "idEscuela":69,
+    "ACCIONTOMADA":"Denuncié ante una autoridad escolar",
+    "SERVICIOADD":"Atención Psicológica",
+    "INFOTIPOSVIOLENCIA":"N",
+    "MECANISMOSDENUNCIAS":"N",
+    "TEMPORALIDAD":"Más de 12 m",
+    "ZONA":"Dentro del Aula",
+    "NIVELGRAVEDAD":"Medio",
+    "TIPOVIOLENCIA":"Física",
+    "SUCEDIOALGO":"Si, tomaron la denuncia pero no sé que pasó"
+}
+
+###
+
+post http://localhost:3000/denunciante
+Content-Type: application/json
+
+{
+    "nombreDenunciante":"Martín Guillermo Hoyos Sifuentes", 
+    "contacto":"meteorickestrel@gmail",
+    "sexo":"H",
+    "edad":23,
+    "rol":"Estudiante"
+}
+
+###
+
+post http://localhost:3000/abusador
+Content-Type:  application/json
+
+{
+    "nombres":"José Antonio",
+    "apellidoPat":"Lozano",
+    "apellidoMat":"Probando",
+    "sexo":"H",
+    "rol":"Compañero de clase"
+}
+
+###
+
+get http://localhost:3000/abusador/José Antonio&Lozano&Probando&H&Compañero de clase
+
+###
+
+get http://localhost:3000/denunciante/Martín Guillermo Hoyos Sifuentes&meteorickestrel@gmail&H&23&Estudiante
