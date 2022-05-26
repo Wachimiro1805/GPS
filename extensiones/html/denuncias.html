@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/navbar-fixed/">
+
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="/css/index.css" rel="stylesheet">
+  <link href="/css/denuncias.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-light fixed-top " style="background-color: #def7eb;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/index.html"><img src="/images/logo.png" width="150" height="100"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/tipos.html">¿Qué es la violencia?</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/denuncias.html">Denuncias</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/estadisticas.html">Estadísticas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/Login.html"><img src="/images/icono.png" height="35"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+  <main>
+
+    <div class="contenedor">
+      <h1 class="logo"><span class="nombre-empresa">PROMEX</span></h1>
+      <div class="wrapper animated bounceInLeft">
+
+        <!--###############################DENUNCIANTE##################################-->
+        <div class="contacto-denunciante">
+          <h3>Denunciante</h3>
+          <form class="formulario-denunciante">
+            <div class="formulario-denunciante1">
+              <p>
+                <label>Nombre Completo</label>
+                <input type="text" name="nombre" required>
+              </p>
+              <p>
+                <label>Datos Contacto</label>
+                <input type="text" name="contacto">
+              </p>
+              <p>
+                <label>Sexo</label>
+                <select name="sexo" required>
+                  <option> </option>
+                  <option value="H">Hombre</option>
+                  <option value="M">Mujer</option>
+                </select>
+              </p>
+              <p>
+                <label>Edad</label>
+                <input type="text" name="edad" required>
+              </p>
+              <p class="full">
+                <label>Descripción del abuso</label>
+                <textarea name="descripcion-abuso" required></textarea>
+              </p>
+            </div>
+            <!--###############################ABUSADOR##################################-->
+            <br>
+            <h3>Abusador</h3>
+            <div class="formulario-abusador1">
+              <p>
+                <label>Nombre Completo</label>
+                <input type="text" name="nombre" required>
+              </p>
+              <p>
+                <label>Apellido Paterno</label>
+                <input type="text" name="ap" required>
+              </p>
+              <p>
+                <label>Apellido Materno</label>
+                <input type="text" name="am" required>
+              </p>
+              <p>
+                <label>Sexo</label>
+                <select name="sexo" required>
+                  <option> </option>
+                  <option value="H">Hombre</option>
+                  <option value="M">Mujer</option>
+                </select>
+              </p>
+            </div>
+            <!--###############################DATOS##################################-->
+            <br>
+            <h3>Datos</h3>
+            <div class="formulario-datos1">
+              <p>
+                <label>Municipio del Estado</label>
+                <select name="municipio" required>
+                  <option value=""></option>
+                  <option value=""></option>
+                </select>
+              </p>
+              <p>
+                <label>Escuelas del Estado</label>
+                <select name="escuelas" required>
+                  <option value=""></option>
+                  <option value=""></option>
+                </select>
+              </p>
+              <p>
+                <label>Tipo de Violencia</label>
+                <select name="tipo-violencia" required>
+                  <option value="Patrimonial">Patrimonial</option>
+                  <option value="Sexual">Sexual</option>
+                  <option value="Física">Física</option>
+                  <option value="Psicológica/Verbal">Psicológica/Verbal</option>
+                </select>
+              </p>
+              <p>
+                <label>Rol del Abusador</label>
+                <select name="rol-acosador" required>
+                  <option value="Compañero de clase">Compañero de clase</option>
+                  <option value="Compañero de escuela">Compañero de escuela</option>
+                  <option value="Relación de Noviazgo dentro de la Escuela">Relación de Noviazgo dentro de la Escuela
+                  </option>
+                  <option value="Relación de Noviazgo fuera de la Escuela">Relación de Noviazgo fuera de la Escuela
+                  </option>
+                  <option value="Maestro">Maestro</option>
+                  <option value="Director">Director</option>
+                  <option value="Personal Administrativo">Personal Administrativo</option>
+                  <option value="Personal de Labores Varias">Personal de Labores Varias</option>
+                  <option value="Personas Ajenas a la Escuela">Personas Ajenas a la Escuela</option>
+                </select>
+              </p>
+              <p>
+                <label>¿Sucedió algo al respecto?</label>
+                <select name="sucedió-algo" required>
+                  <option value="No, no me quisieron atender">No, no me quisieron atender</option>
+                  <option value="No, no quisieron levantarme la denuncia">No, no quisieron levantarme la denuncia
+                  </option>
+                  <option value="No, tomaron la denuncia y no se hizo nada">No, tomaron la denuncia y no se hizo nada
+                  </option>
+                  <option value="Si, se atendió mi denuncia y hubo un castigo">Si, se atendió mi denuncia y hubo un
+                    castigo</option>
+                  <option value="Si, tomaron la denuncia y no se hizo nada">Si, tomaron la denuncia y no se hizo nada
+                  </option>
+                  <option value="Si, tomaron la denuncia pero no sé que pasó">Si, tomaron la denuncia pero no sé que
+                    pasó</option>
+                </select>
+              </p>
+              <p>
+                <label>Gravedad del Abuso</label>
+                <select name="gravedad-asunto" required>
+                  <option value="Muy Bajo">Muy Bajo</option>
+                  <option value="Bajo">Bajo</option>
+                  <option value="Medio">Medio</option>
+                  <option value="Alto">Alto</option>
+                  <option value="Muy Alto">Muy Alto</option>
+                </select>
+              </p>
+              <p>
+                <label>Zona del Incidente</label>
+                <select name="zona-incidente" required>
+                  <option value="Dentro del Aula">Dentro del Aula</option>
+                  <option value="En oficina/privado">En oficina/privado</option>
+                  <option value="Áreas comunes">Áreas comunes</option>
+                  <option value="Baños">Baños</option>
+                  <option value="Fuera del Plantel durante Actividad Académica">Fuera del Plantel durante Actividad
+                    Académica</option>
+                  <option value="Fuera del Plantel">Fuera del Plantel</option>
+                </select>
+              </p>
+              <p>
+                <label>¿Qué acción tomó?</label>
+                <select name="acciones-tomadas" required>
+                  <option value="Ninguna">Ninguna</option>
+                  <option value="Denuncié ante un maestro">Denuncié ante un maestro</option>
+                  <option value="Denuncié ante una autoridad escolar">Denuncié ante una autoridad escolar</option>
+                  <option value="Denuncié ante una instancia">Denuncié ante una instancia</option>
+                </select>
+              </p>
+              <p>
+                <label>¿Se adquirió un servicio externo?</label>
+                <select name="servicio-externo" required>
+                  <option value="Atención Psicológica">Atención Psicológica</option>
+                  <option value="Atención psiquiátrica">Atención psiquiátrica</option>
+                  <option value="Atención médica">Atención médica</option>
+                  <option value="Interrupción legal del embarazo">Interrupción legal del embarazo</option>
+                  <option value="No">No</option>
+                </select>
+              </p>
+              <p>
+                <label>¿En tu institución recibes información sobre la violencia?</label>
+                <select name="informacion-violencia" required>
+                  <option> </option>
+                  <option value="Y">Si</option>
+                  <option value="N">No</option>
+                </select>
+              </p>
+              <p>
+                <label>¿En tu institución existen mecanismos para reportar la violencia?</label>
+                <select name="mecanismos-violencia" required>
+                  <option> </option>
+                  <option value="Y">Si</option>
+                  <option value="N">No</option>
+                </select>
+              </p>
+              <p class="full">
+                <button class="boton-enviar">Enviar</button>
+              </p>
+            </div>
+
+          </form>
+        </div>
+
+        <!--#####################################################################-->
+
+      </div>
+    </div>
+
+  </main>
+
+</body>
+
+<footer>
+  <div class="info-empresa">
+
+    <ul class="servicios">
+      <li><i class="fa fa-map-marker"></i> <a href="https://www.facebook.com/promexac/"><img
+            src="/images/logoFace.png"></a></li>
+      <li><i class="fa fa-mobile"></i>311 264 0466</li>
+      <li><i class="fa fa-envelope"></i>contacto@progresoparamexico.org</li>
+    </ul>
+  </div>
+</footer>
+
+</html>
