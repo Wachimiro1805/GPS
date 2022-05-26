@@ -75,7 +75,7 @@ function insertarAbusador() {
     const apellidoPat = document.querySelector('#ap');
     const apellidoMat = document.querySelector('#am');
     const sexo = document.querySelector('#sexoAbusador');
-    const rol = document.querySelector('#rolAbusador');
+    const rol = document.querySelector('#rol-abusador');
 
     let url = "http://localhost:3000/abusador/";
 
@@ -128,13 +128,16 @@ function recuperarIdAbusador(){
 function funcionallamar(){
     if(checador){
         actualizaridDenuncianteYAbusador();
-        verificarDatos();
+        //verificarDatos();
+        insertarDenuncia();
         console.log("Denunciante: "+idDenuncianteRecuperado+" y Abusador: "+idAbusadorRecuperado);
         checador = false;
     } else {
         checador = true;
-        
+        insertarDenunciante();
+        insertarAbusador();
         actualizaridDenuncianteYAbusador();
+        verificarDatos();
     }
 }
 
@@ -147,8 +150,7 @@ function verificarDatos(){
     
     const hechos = document.querySelector('#descripcion-abuso');
     const fechaDenuncia = new Date(Date.now());
-    //console.log(fechaDenuncia);
-    const cadenaFecha = "";//fechaDenuncia.getMonth()+"-"+fechaDenuncia.getDay()+"-"+fechaDenuncia.getFullYear();
+    const cadenaFecha = (fechaDenuncia.getMonth()+1)+"-"+fechaDenuncia.getDate()+"-"+fechaDenuncia.getFullYear();
     const idEscuela = document.querySelector('#escuela');
     const ACCIONTOMADA = document.querySelector('#acciones-tomadas');
     const SERVICIOADD = document.querySelector('#servicio-externo')
@@ -184,12 +186,7 @@ function insertarDenuncia(){
     try {
         const hechos = document.querySelector('#descripcion-abuso');
         const fechaDenuncia = new Date(Date.now());
-        const cadenaFecha = fechaDenuncia.getMonth+"-"+fechaDenuncia.getDay+"-"+fechaDenuncia.getFullYear;
-        //const estadoDenuncia;
-        insertarDenunciante();
-        const idDenunciante = recuperarIdDenunciante();
-        insertarAbusador();
-        const idAbusador = recuperarIdAbusador();
+        const cadenaFecha = (fechaDenuncia.getMonth()+1)+"-"+fechaDenuncia.getDate()+"-"+fechaDenuncia.getFullYear();
         const idEscuela = document.querySelector('#escuela');
         const ACCIONTOMADA = document.querySelector('#acciones-tomadas');
         const SERVICIOADD = document.querySelector('#servicio-externo')
@@ -204,8 +201,8 @@ function insertarDenuncia(){
         let datos = {
             hechos:hechos.value,
             fechaDenuncia:cadenaFecha,
-            idDenunciante:idDenunciante,
-            idAbusador:idAbusador,
+            idDenunciante:idDenuncianteRecuperado,
+            idAbusador:idAbusadorRecuperado,
             idEscuela:idEscuela.value,
             ACCIONTOMADA:ACCIONTOMADA.value,
             SERVICIOADD:SERVICIOADD.value,
@@ -217,17 +214,17 @@ function insertarDenuncia(){
             TIPOVIOLENCIA:TIPOVIOLENCIA.value,
             SUCEDIOALGO:SUCEDIOALGO.value
         }
-    
-        console.log(datos);
 
         let url = "http://localhost:3000/denuncias"
     
-        const xhttp = XMLHttpRequest();
+        const xhttp = new XMLHttpRequest();
+        xhttp.open('post',url,true);
+    
+        xhttp.setRequestHeader('Content-type','application/json');
         
-        xhttp.open('post',url,true)
-        xhttp.setRequestHeader('Content-Type','application/json');
-
         xhttp.send(JSON.stringify(datos));
+    
+        console.log(datos);
     } catch (error){
         console.log(error);
     }
@@ -235,38 +232,5 @@ function insertarDenuncia(){
    
 }
 
-function regresarAOriginal() {
-    const hechos = document.querySelector('#descripcion-abuso');
-    const nombreDenunciante = document.querySelector('#nombreDenunciante');
-    const contacto = document.querySelector('#contacto');
-    const sexoDenunciante = document.querySelector('#sexoDenunciante');
-    const edadDenunciante = document.querySelector('#edadDenunciante');
-    const rolDenunciante = document.querySelector('#rolDenunciante');
-    const nombresAbusador = document.querySelector('#nombresAbusador');
-    const apePatAbusador = document.querySelector('#ap');
-    const apeMatAbusador = document.querySelector('#am');
-    const sexoAbusador = document.querySelector('#sexoAbusador');
-    const rolAbusador = document.querySelector('#rol-acosador');
-    const idEscuela = document.querySelector('#escuelas');
-    const ACCIONTOMADA = document.querySelector('#acciones-tomadas');
-    const SERVICIOADD = document.querySelector('#servicio-externo')
-    const INFOTIPOSVIOLENCIA = document.querySelector('informacion-violencia').value;
-    const MECANISMOSDENUNCIAS = document.querySelector('#mecanismos-violencia').value;
-    const TEMPORALIDAD = document.querySelector('#');
-    const ZONA = document.querySelector('#zona-incidente');
-    const NIVELGRAVEDAD = document.querySelector('#gravedad-asunto');
-    const TIPOVIOLENCIA = document.querySelector('#tipo-violencia');
-    const SUCEDIOALGO = document.querySelector('#sucedió-algo');
 
-    hechos.value = "";
-    nombreDenunciante.value = "";
-    contacto.value="";
-    sexoDenunciante.value="";
-    edadDenunciante.value="";
-    
-    nombresAbusador.value="";
-    apePatAbusador.value="";
-    apeMatAbusador.value="";
-    sexoAbusador.value
-}
 
