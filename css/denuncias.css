@@ -135,3 +135,10 @@ button:focus,button:hover {
   outline: 0;
   transition: background-color 2s ease-out;
 }
+
+
+
+
+.redondeado {
+  border-radius: 5px;
+}
