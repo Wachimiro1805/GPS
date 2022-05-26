@@ -95,75 +95,225 @@ footer {
   box-sizing: border-box;
 }
 
-h1{
-    text-align: center;
-    padding: 10px;
-    color: rgb(97, 96, 96);
-}
-.descripcion{
-    text-align: center;
-    padding: 5px 25px;
-    color: rgb(53, 53, 53);
+h1 {
+  text-align: center;
+  padding: 10px;
+  color: rgb(97, 96, 96);
 }
 
-.card{
-    width: 100%;
-    display: flex;
-    gap: 50px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 30px;
+.descripcion {
+  text-align: center;
+  padding: 5px 25px;
+  color: rgb(53, 53, 53);
 }
-.card__perfil{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
+
+.card {
+  width: 100%;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.card__perfil {
+  width: 100%;
+  padding: 20px;
+  box-shadow: 1px 1px 5px rgb(201, 201, 201);
+  border: solid rgba(3, 133, 255, 0) 2px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.card__perfil:hover {
+  border: solid rgb(3, 133, 255) 2px;
+}
+
+.card__perfil:hover img {
+  filter: opacity(.5);
+  transition: all 1s ease-in-out;
+
+
+
+}
+
+.imagen-tipos {
+  width: 500px;
+  border-radius: 10%;
+  box-shadow: 1px 1px 2px rgb(216, 216, 216);
+  transition: all .3s;
+  align-items: center;
+  padding: 1rem;
+}
+
+.card__nombre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding-top: 1rem;
+
+}
+
+.card__descripcion {
+  padding: 2rem;
+
+}
+
+.card__descripcion:hover {
+  width: 100%;
+  transition: width .4s;
+}
+
+.imagen-violencia {
+  width: 20rem;
+}
+
+
+hr {
+  width: 100%;
+  height: 4px;
+  background: rgb(223, 221, 221);
+  margin: 20px 5px;
+}
+
+.card__button {
+  text-align: center;
+}
+
+.enlace {
+  background: rgb(0, 110, 255);
+  padding: 8px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+details {
+  font-size: 1rem;
+  margin: 2em auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  background: #ffffff;
+  border-radius: 8px;
+
+  width: 700px;
+}
+
+details[open] > summary {
+  color:coral;
+}
+
+details:hover {
+  cursor: pointer;
+}
+
+details .summary {
+  border-top: 1px solid #e2e8f0;
+  cursor: default;
+
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+details summary {
+  list-style: none;
+  padding: 1em;
+}
+
+details summary:focus {
+  outline: none;
+}
+
+details summary:hover .summary-chevron-up svg {
+  opacity: 1;
+}
+
+
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+
+
+  details[open]>p {
+    animation-name: slideDown;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+  }
+
+  to {
+    opacity: 1;
+    height: var(--contentHeight);
     padding: 20px;
-    box-shadow: 1px 1px 5px rgb(201, 201, 201);
-    border: solid rgba(3, 133, 255, 0) 2px;
-    border-radius: 10px;
-    
-}
-.card__perfil:hover{
-    border: solid rgb(3, 133, 255) 2px;
-}
-.card__perfil:hover img{
-    transform: rotate(0);
-}
-.imagen-tipos{
-    width: 320px;
-    border-radius: 10%;
-    box-shadow: 1px 1px 2px rgb(216, 216, 216);
-    transform: rotate(-30deg);
-    transition: all .3s;
-    align-items: center;
-    padding: 1rem;
-}
-.card__nombre{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    padding-top: 10rem;
+  }
 }
 
-.card__descripcion{
-padding: 2rem;
 
+/*link*/
+
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+  padding-left: 1em;
 }
 
-hr{
-    width: 100%;
-    height: 4px;
-    background: rgb(223, 221, 221);
-    margin: 20px 5px;
+a:link {
+  color: #6bd415;
 }
-.card__button{
-    text-align: center;
+
+a:visited {
+  color: #838109;
+  font-style: bold;
 }
-.enlace{
-    background: rgb(0, 110, 255);
-    padding: 8px 20px;
-    color: white;
-    text-decoration: none;
+
+a:focus {
+  border-bottom: 1px solid;
+  background: #BAE498;
+}
+
+a:hover {
+  border-bottom: 1px solid;
+  background: #CDFEAA;
+}
+
+a:active {
+  background: #265301;
+  color: #CDFEAA;
 }
