@@ -31,8 +31,8 @@ export const putDenuncias = async(req,res) => {
         const pool = await getConnection()
     
         await pool.request()
-            .input("hechos", sql.text,hechos)
-            .input("fechaDenuncia", sql.date, fechaDenuncia)
+            .input("hechos", sql.Text,hechos)
+            .input("fechaDenuncia", sql.Date, fechaDenuncia)
             .input("idDenunciante",sql.Int,idDenunciante)
             .input("idAbusador",sql.Int,idAbusador)
             .input("idEscuela",sql.Int,idEscuela)

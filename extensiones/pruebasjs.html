@@ -68,6 +68,10 @@
                     <label>Descripción del abuso</label>
                     <textarea name="descripcion-abuso" id="descripcion-abuso" required></textarea>
                   </p>
+                  <p>
+                    <button id="pruebaInsercionDenunciante">Prueba Insercion</button>
+                    <button id="pruebaRecuperadoIdDenunciante">Prueba Recuperado</button>
+                  </p>
                 </div>
                 <!--###############################ABUSADOR##################################-->
                 <br>
@@ -93,6 +97,26 @@
                       <option value="M">Mujer</option>
                     </select>
                   </p>
+                  <p>
+                    <label>Rol del Abusador</label>
+                    <select name="rol-acosador" id="rol-abusador" required>
+                      <option value="Compañero de clase">Compañero de clase</option>
+                      <option value="Compañero de escuela">Compañero de escuela</option>
+                      <option value="Relación de Noviazgo dentro de la Escuela">Relación de Noviazgo dentro de la Escuela
+                      </option>
+                      <option value="Relación de Noviazgo fuera de la Escuela">Relación de Noviazgo fuera de la Escuela
+                      </option>
+                      <option value="Maestro">Maestro</option>
+                      <option value="Director">Director</option>
+                      <option value="Personal Administrativo">Personal Administrativo</option>
+                      <option value="Personal de Labores Varias">Personal de Labores Varias</option>
+                      <option value="Personas Ajenas a la Escuela">Personas Ajenas a la Escuela</option>
+                    </select>
+                  </p>
+                  <p>
+                    <button id="pruebaInsercionAbusador">Prueba Insercion</button>
+                    <button id="pruebaRecuperadoIdAbusador">Prueba Recuperado</button>
+                  </p>
                 </div>
                 <!--###############################DATOS##################################-->
                 <br>
@@ -114,7 +138,7 @@
                   </p>
                   <p>
                     <label>Escuelas del Estado</label>
-                    <select name="escuelas" id="escuela"required>
+                    <select name="escuelas" id="escuela" required>
 
                     </select>
                   </p>
@@ -125,22 +149,6 @@
                       <option value="Sexual">Sexual</option>
                       <option value="Física">Física</option>
                       <option value="Psicológica/Verbal">Psicológica/Verbal</option>
-                    </select>
-                  </p>
-                  <p>
-                    <label>Rol del Abusador</label>
-                    <select name="rol-acosador" id="rolAbusador" required>
-                      <option value="Compañero de clase">Compañero de clase</option>
-                      <option value="Compañero de escuela">Compañero de escuela</option>
-                      <option value="Relación de Noviazgo dentro de la Escuela">Relación de Noviazgo dentro de la Escuela
-                      </option>
-                      <option value="Relación de Noviazgo fuera de la Escuela">Relación de Noviazgo fuera de la Escuela
-                      </option>
-                      <option value="Maestro">Maestro</option>
-                      <option value="Director">Director</option>
-                      <option value="Personal Administrativo">Personal Administrativo</option>
-                      <option value="Personal de Labores Varias">Personal de Labores Varias</option>
-                      <option value="Personas Ajenas a la Escuela">Personas Ajenas a la Escuela</option>
                     </select>
                   </p>
                   <p>
@@ -213,16 +221,16 @@
                   <p>
                     <label>¿En tu institución recibes información sobre la violencia?</label>
                     <select name="informacion-violencia" id="informacion-violencia" required>
-                      <option> </option>
-                      <option value="Y">Si</option>
+                      <option value=""></option>
+                      <option value="S">Si</option>
                       <option value="N">No</option>
                     </select>
                   </p>
                   <p>
                     <label>¿En tu institución existen mecanismos para reportar la violencia?</label>
                     <select name="mecanismos-violencia" id="mecanismos-violencia" required>
-                      <option> </option>
-                      <option value="Y">Si</option>
+                      <option value=""></option>
+                      <option value="S">Si</option>
                       <option value="N">No</option>
                     </select>
                   </p>

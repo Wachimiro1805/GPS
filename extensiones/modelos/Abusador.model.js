@@ -7,7 +7,7 @@ export const putAbusador = async (req,res) => {
         return res.status(400).json({msg : 'Uno o más campos vacíos'});
     }
     try {
-        const pool = getConnection();
+        const pool = await getConnection();
 
         await pool.request()
             .input('nombres',sql.VarChar,nombres)
@@ -17,7 +17,7 @@ export const putAbusador = async (req,res) => {
             .input('rol',sql.VarChar,rol)
             .query(queries.registerAbusador)
         
-        res.json(nombres, apellidoPat, apellidoMat, sexo, rol)
+        res.json({nombres, apellidoPat, apellidoMat, sexo, rol})
     } catch (error) {
         res.status(500);
         res.send(error.message);

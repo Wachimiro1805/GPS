@@ -9,8 +9,8 @@ export const queries = {
     getEscuelasByLevel: "select * from ESCUELAS where NIVELESCUELA = @NIVELESCUELA",
     getEscuelasByLevelAndState : "Select * from ESCUELAS where idMunicipio = @idMunicipio and NIVELESCUELA = @NIVELESCUELA",
     registerNewDenunciante: "Insert into DENUNCIANTES values (@nombreDenunciante, @contacto, @sexo, @edad, @rol)",
-    getDenuncianteEspecifico: "select * from  Denunciante where nombreDenunciante = @nombreDenunciante and contacto = @contacto and sexo = @sexo and edad = @edad and rol = @rol",
-    registerAbusador: "Insert into ABUSADOR values (@nombres, @apellidoPat, @apellidoMat, @sexo, @rol",
+    getDenuncianteEspecifico: "select * from  DENUNCIANTES where nombreDenunciante = @nombreDenunciante and contacto = @contacto and sexo = @sexo and edad = @edad and rol = @rol",
+    registerAbusador: "Insert into ABUSADOR values (@nombres, @apellidoPat, @apellidoMat, @sexo, @rol)",
     getAbusadorEspecifico: "select * from  ABUSADOR where nombres = @nombres and apellidoPat = @apellidoPat and apellidoMat = @apellidoMat and sexo = @sexo and rol = @rol",
     getMunicipios: "select * from MUNICIPIOS"
 }
