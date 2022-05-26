@@ -2,8 +2,7 @@
 
 *,*::before,::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+
 }
 
 body {
@@ -16,7 +15,7 @@ body {
 .contenedor {
   max-width: 1170px;
   margin: 0 auto 1rem;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .wrapper {
@@ -59,16 +58,7 @@ h3 {
 .nombre-empresa {
   color: darken(#455a64, 15%);
 }
-/*
-.contacto-denunciante {
-  padding: 1rem;
-  background-color: #c0a0c3;
-}
-.contacto-abusador{
-  padding: 1rem;
-  background-color: #e6d6e7;
-}
-*/
+
 h3 {
   margin-bottom: 1rem;
 }
@@ -79,24 +69,32 @@ h3 {
   background-color: #c0a0c3;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 1.25rem;
 }
-.formulario-abusador1{
+.formulario-agresor{
   padding: 1rem;
   background-color: #e6d6e7;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 1.25rem;
 }
-.formulario-datos1{
+.formulario-institucion{
   padding: 1rem;
-  background-color: #ebd6e6;
+  background-color: #e6d6e7;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 1.25rem;
+}
+.formulario-denuncia{
+  padding: 1rem;
+  background-color: #c0a0c3;
+
+  display: flex;
+  flex-direction: column;
+  
 }
 
 label {
@@ -142,3 +140,112 @@ button:focus,button:hover {
 .redondeado {
   border-radius: 5px;
 }
+
+
+
+/*CONFIGURACION MOVIL DE DENUNCIAS*/
+
+@media (max-width: 1200px) {
+
+
+  /*Ajuste de la pantalla Movil de  Tipos de Violencia*/
+
+  .card {
+      width: 100%;
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+
+      justify-content: center;
+      margin-top: 30px;
+  }
+
+  p {
+      padding: 1em;
+  }
+
+  .card__perfil {
+      width: 100%;
+      padding: 1rem;
+      box-shadow: 1px 1px 5px rgb(201, 201, 201);
+      border: solid rgba(3, 133, 255, 0) 2px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+  }
+
+  .card__perfil:hover {
+      border: solid rgb(3, 133, 255) 2px;
+  }
+
+  .card__perfil:hover img {
+      filter: opacity(.5);
+      transition: all 1s ease-in-out;
+
+
+
+  }
+
+
+
+  .card__nombre {
+
+      gap: 5px;
+      padding-top: 1rem;
+
+  }
+
+  .card__descripcion {
+      padding: 1rem;
+      gap: 5px;
+
+  }
+
+  .card__descripcion:hover {
+      width: 100%;
+      transition: width .4s;
+  }
+
+
+
+  details {
+      font-size: 1rem;
+      
+      margin: 1em auto;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+      background: #ffffff;
+      border-radius: 8px;
+
+      width: 20.5rem;
+  }
+
+  details[open]>p {
+      animation-name: slideDown;
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+  }
+}
+
+@keyframes slideDown {
+  from {
+      opacity: 0;
+      height: 0;
+      padding: 0;
+  }
+
+  to {
+      opacity: 1;
+      height: var(--contentHeight);
+      padding: 20px;
+  }
+}
+
+
+
+
+
+
+
