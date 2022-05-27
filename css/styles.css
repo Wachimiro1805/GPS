@@ -173,5 +173,8 @@ tr:nth-child(even) {
     font-size: xx-small;
   }
   
+  .item-a{
+    margin-left: 15rem;
+  }
   
 }
