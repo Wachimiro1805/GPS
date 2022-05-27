@@ -12,5 +12,7 @@ export const queries = {
     getDenuncianteEspecifico: "select * from  DENUNCIANTES where nombreDenunciante = @nombreDenunciante and contacto = @contacto and sexo = @sexo and edad = @edad and rol = @rol",
     registerAbusador: "Insert into ABUSADOR values (@nombres, @apellidoPat, @apellidoMat, @sexo, @rol)",
     getAbusadorEspecifico: "select * from  ABUSADOR where nombres = @nombres and apellidoPat = @apellidoPat and apellidoMat = @apellidoMat and sexo = @sexo and rol = @rol",
-    getMunicipios: "select * from MUNICIPIOS"
+    getMunicipios: "select * from MUNICIPIOS",
+    getLogin : "select * from ADMINISTRADORES WHERE usuario = @usuario COLLATE SQL_Latin1_General_CP1_CS_AS AND contra = @password COLLATE SQL_Latin1_General_CP1_CS_AS",
+    getSuperLogin : "select * from ADMINISTRADORES WHERE usuario = @usuario AND contra = @contra"
 }
