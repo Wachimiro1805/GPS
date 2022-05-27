@@ -13,15 +13,19 @@ function traerDatos(){
 
             console.log(datos);
 
-            let cont = document.querySelector('#content');
+            let cont = document.querySelector('#names');
 
             cont.innerHTML = '';
             for(let item of datos){
                 cont.innerHTML += `
-                <div class="contenedorDenuncia" id="contenedorDenuncia">
-                <p>Escuela: ${item.idEscuela}</p>
-                <p>${item.hechos}</p>
-                </div>
+                <tr>
+                    <td>${item.idAbusador}</td>
+                    <td>${item.hechos}</td>
+                    <td>${item.TIPOVIOLENCIA}</td>
+                    <td>${item.idEscuela}</td>
+                    <td>${item.idEscuela}</td>
+                    <td>${item.idEscuela}</td>
+                </tr>
                 `
             }
         }
