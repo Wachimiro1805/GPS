@@ -53,7 +53,7 @@ function traerDH(){
 
             cont.innerHTML = '';
             for(let item of datos){
-                console.log(item.cant);
+                //console.log(item.cant);
 
                 cont.innerHTML = item.cant;
             }
@@ -77,7 +77,7 @@ function traerDM(){
 
             cont.innerHTML = '';
             for(let item of datos){
-                console.log(item.cant);
+                //console.log(item.cant);
 
                 cont.innerHTML = item.cant;
             }
@@ -101,7 +101,7 @@ xhttp.onreadystatechange = function() {
 
         cont.innerHTML = '';
         for(let item of datos){
-            console.log(item.cant);
+            //console.log(item.cant);
 
             cont.innerHTML = item.cant;
         }
@@ -125,7 +125,7 @@ function traerAM(){
     
             cont.innerHTML = '';
             for(let item of datos){
-                console.log(item.cant);
+                //console.log(item.cant);
     
                 cont.innerHTML = item.cant;
             }
@@ -149,7 +149,7 @@ function traerDenunciasEnMS() {
     
             cont.innerHTML = '';
             for(let item of datos){
-                console.log(item.cant);
+                //console.log(item.cant);
     
                 cont.innerHTML = item.cant;
             }
@@ -172,7 +172,7 @@ function traerDenunciasEnS() {
     
             cont.innerHTML = '';
             for(let item of datos){
-                console.log(item.cant);
+                //console.log(item.cant);
     
                 cont.innerHTML = item.cant;
             }
@@ -196,7 +196,7 @@ function traerDenunciasP(){
     
             cont.innerHTML = '';
             for(let item of datos){
-                console.log(item.cant);
+                //console.log(item.cant);
     
                 cont.innerHTML = item.cant;
             }
@@ -265,7 +265,7 @@ function traerDenunciasPV(){
     
             cont.innerHTML = '';
             for(let item of datos){
-                console.log(item.cant);
+                //console.log(item.cant);
     
                 cont.innerHTML = item.cant;
             }
@@ -279,25 +279,29 @@ function filtrar() {
     const insti = document.querySelector('#filInstitucion').value;
     const nivel = document.querySelector('#filNivel').value;
 
-    if(municipio != null && insti != null && nivel != null){
+    if(municipio != "" && insti != "" && nivel != "" ){
         
-    }else if(municipio != null && insti != null){
+    }else if(municipio != "" && insti != "" ){
 
-    }else if(municipio != null && nivel != null){
+    }else if(municipio != "" && nivel != "" ){
 
-    }else if(insti != null && nivel != null){
+    }else if(insti != "" && nivel != ""){
 
-    }else if (municipio != null){
+    }else if (municipio != ""){
+        filtarPorMunicipio(municipio);
+    }else if (insti != ""){
 
-    }else if (insti != null){
-
-    }else if (nivel != null){
-
+    }else if (nivel != ""){
+        
     }
 }
 
 function filtarPorMunicipio(valormuni){ 
+
+    console.log(valormuni);
     let url = "http://localhost:3000/denunciaspm/"+valormuni;
+
+    console.log(url);
 
     const xhttp = new XMLHttpRequest();
 
