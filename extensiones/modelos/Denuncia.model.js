@@ -3,7 +3,7 @@ import { getConnection, sql, queries } from '../database/databaseindex.js'
 export const getDenuncias = async (req,res) => {
 try {
     const pool = await getConnection();
-    const result = await pool.request().query(queries.getAllDenuncias);
+    const result = await pool.request().query(queries.getDenunciasWithPublicInfo);
     console.log(result);
 
     res.json(result.recordset);
@@ -116,4 +116,53 @@ export const updateDenuncia = async (req, res) => {
         .input('SUCEDIOALGO',sql.VarChar,SUCEDIOALGO)
         .query(queries.updateDenuncia);
     res.json(result.recordset)
+}
+
+export const getDenunciaP = async (req,res)=>{
+    try{
+        const pool = await getConnection();
+        const result = await pool.request()
+            .query(queries.getDenunciaP);
+
+        res.send(result.recordset)
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}
+export const getDenunciaS = async (req,res)=>{
+    try{
+        const pool = await getConnection();
+        const result = await pool.request()
+            .query(queries.getDenunciaS);
+
+        res.send(result.recordset)
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}
+export const getDenunciaF = async (req,res)=>{
+    try{
+        const pool = await getConnection();
+        const result = await pool.request()
+            .query(queries.getDenunciaF);
+
+        res.send(result.recordset)
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}
+export const getDenunciaPV = async (req,res)=>{
+    try{
+        const pool = await getConnection();
+        const result = await pool.request()
+            .query(queries.getDenunciaPV);
+
+        res.send(result.recordset)
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
 }
