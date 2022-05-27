@@ -22,4 +22,4 @@ function filtro() {
   // Se agrega un escuchador de eventos a la entrada de texto
   // para activar la función de filtrado cada vez que el usuario
   // ingresa texto en la entrada
-  document.getElementById("searchInput").addEventListener("keyup", filtro);
+//  document.getElementById("searchInput").addEventListener("keyup", filtro);

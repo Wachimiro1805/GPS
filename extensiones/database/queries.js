@@ -9,6 +9,7 @@ export const queries = {
     getDenunciaS:"select count(TIPOVIOLENCIA) as cant from DENUNCIAS where TIPOVIOLENCIA='Sexual';",
     getDenunciaF:"select count(TIPOVIOLENCIA) as cant from DENUNCIAS where TIPOVIOLENCIA='Física';",
     getDenunciaPV:"select count(TIPOVIOLENCIA) as cant from DENUNCIAS where TIPOVIOLENCIA='Psicológica/Verbal';",
+    getDenunciasPorMunicipio:"select DENUNCIAS.hechos as hechos, ABUSADOR.nombres+' '+ABUSADOR.apellidoPat+' '+ABUSADOR.apellidoMat as nombreAbusador, DENUNCIAS.TIPOVIOLENCIA as tipoV, MUNICIPIOS.nombre as municipio, ESCUELAS.Nombre as insti, ESCUELAS.NIVELESCUELA as ns from DENUNCIAS inner join ESCUELAS on DENUNCIAS.idEscuela = ESCUELAS.idEscuela inner join MUNICIPIOS on ESCUELAS.idMunicipio = MUNICIPIOS.idMunicipio inner join ABUSADOR on DENUNCIAS.idAbusador = ABUSADOR.idAbusador where MUNICIPIOS.idMunicipio = @municipio;",
     getEscuelas: "select * from ESCUELAS;",
     getEscuelasMS: "select count(NIVELESCUELA) as cant from DENUNCIAS inner join ESCUELAS on DENUNCIAS.idEscuela = ESCUELAS.idEscuela where ESCUELAS.NIVELESCUELA = 'Media S';",
     getEscuelaS: "select count(NIVELESCUELA) as cant from DENUNCIAS inner join ESCUELAS on DENUNCIAS.idEscuela = ESCUELAS.idEscuela where ESCUELAS.NIVELESCUELA = 'Superior';",

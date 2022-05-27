@@ -243,3 +243,18 @@ export const getDenunciasVPV = async (req,res)=>{
         res.send(error.message);
     }
 }
+
+export const getDenunciasporMunicipio = async(req,res)=>{
+    try{
+        const {municipio} = req.params;
+        const pool = await getConnection();
+        const result = await pool.request()
+            .input('municipio',municipio)
+            .query(queries.getDenunciasPorMunicipio);
+
+        res.send(result.recordset);
+    } catch(error){
+        res.status(500);
+        res.send(error.message);
+    }
+}

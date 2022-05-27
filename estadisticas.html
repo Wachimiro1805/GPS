@@ -82,8 +82,10 @@
         <form>
           <div class="row">
             <div class="form-group col-md-4">
-              <label for="filMunicipio">Municipio</label>
-              <input type="text" class="form-control" id="filMunicipio" placeholder="Municipio">
+              <label>Municipio del Estado</label>
+              <select class="redondeado" name="municipio"  id="municipio" required>
+
+              </select>
             </div>
             <div class="form-group col-md-4">
               <label for="filInstitucion">Institución</label>
@@ -95,7 +97,7 @@
             </div>
             <div class="row">
               <div class="form-group col-md-3">
-                <button type="submit" class="btn btn-primary">Filtrar</button>
+                <button class="btn btn-primary" id="btnfiltrar">Filtrar</button>
               </div>
             </div>
           </div>
@@ -234,4 +236,5 @@
   </div>
 </footer>
 <script src="./extensiones/scripts_páginas/consultasDenuncias.js"></script>
+<script src="./extensiones/scripts_páginas/datosMunicipios.js"></script>
 </html>
