@@ -1,6 +1,14 @@
 traerDatos();
 traerDH();
 traerDM();
+traerAH();
+traerAM();
+traerDenunciasEnMS();
+traerDenunciasEnS();
+traerDenunciasP();
+traerDenunciasF();
+traerDenunciasPV();
+traerDenunciasS();
 
 function traerDatos(){
     let url = "http://localhost:3000/denuncias"
@@ -76,6 +84,194 @@ function traerDM(){
             for(let item of datos){
                 console.log(item.cant);
 
+                cont.innerHTML = item.cant;
+            }
+        }
+    }
+    xhttp.send();
+}
+
+function traerAH(){
+let url = "http://localhost:3000/abusadorH"
+
+const xhttp = new XMLHttpRequest();
+
+xhttp.open('GET',url,true);
+
+xhttp.onreadystatechange = function() {
+    if(this.readyState == 4 && this.status == 200){
+        let datos = JSON.parse(this.responseText);
+
+        let cont = document.querySelector('#AH');
+
+        cont.innerHTML = '';
+        for(let item of datos){
+            console.log(item.cant);
+
+            cont.innerHTML = item.cant;
+        }
+    }
+}
+xhttp.send();
+}
+
+function traerAM(){
+    let url = "http://localhost:3000/abusadorM"
+
+    const xhttp = new XMLHttpRequest();
+    
+    xhttp.open('GET',url,true);
+    
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200){
+            let datos = JSON.parse(this.responseText);
+    
+            let cont = document.querySelector('#AM');
+    
+            cont.innerHTML = '';
+            for(let item of datos){
+                console.log(item.cant);
+    
+                cont.innerHTML = item.cant;
+            }
+        }
+    }
+    xhttp.send();
+}
+
+function traerDenunciasEnMS() {
+    let url = "http://localhost:3000/escuelasMS"
+
+    const xhttp = new XMLHttpRequest();
+    
+    xhttp.open('GET',url,true);
+    
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200){
+            let datos = JSON.parse(this.responseText);
+    
+            let cont = document.querySelector('#NMS');
+    
+            cont.innerHTML = '';
+            for(let item of datos){
+                console.log(item.cant);
+    
+                cont.innerHTML = item.cant;
+            }
+        }
+    }
+    xhttp.send();
+}
+function traerDenunciasEnS() {
+    let url = "http://localhost:3000/escuelasS"
+
+    const xhttp = new XMLHttpRequest();
+    
+    xhttp.open('GET',url,true);
+    
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200){
+            let datos = JSON.parse(this.responseText);
+    
+            let cont = document.querySelector('#NS');
+    
+            cont.innerHTML = '';
+            for(let item of datos){
+                console.log(item.cant);
+    
+                cont.innerHTML = item.cant;
+            }
+        }
+    }
+    xhttp.send();
+}
+
+function traerDenunciasP(){
+    let url = "http://localhost:3000/denunciasP"
+
+    const xhttp = new XMLHttpRequest();
+    
+    xhttp.open('GET',url,true);
+    
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200){
+            let datos = JSON.parse(this.responseText);
+    
+            let cont = document.querySelector('#TVP');
+    
+            cont.innerHTML = '';
+            for(let item of datos){
+                console.log(item.cant);
+    
+                cont.innerHTML = item.cant;
+            }
+        }
+    }
+    xhttp.send();
+}
+function traerDenunciasS(){
+    let url = "http://localhost:3000/denunciasS"
+
+    const xhttp = new XMLHttpRequest();
+    
+    xhttp.open('GET',url,true);
+    
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200){
+            let datos = JSON.parse(this.responseText);
+    
+            let cont = document.querySelector('#TVS');
+    
+            cont.innerHTML = '';
+            for(let item of datos){
+                console.log(item.cant);
+    
+                cont.innerHTML = item.cant;
+            }
+        }
+    }
+    xhttp.send();
+}
+function traerDenunciasF(){
+    let url = "http://localhost:3000/denunciasF"
+
+    const xhttp = new XMLHttpRequest();
+    
+    xhttp.open('GET',url,true);
+    
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200){
+            let datos = JSON.parse(this.responseText);
+    
+            let cont = document.querySelector('#TVF');
+    
+            cont.innerHTML = '';
+            for(let item of datos){
+                console.log(item.cant);
+    
+                cont.innerHTML = item.cant;
+            }
+        }
+    }
+    xhttp.send();
+}
+function traerDenunciasPV(){
+    let url = "http://localhost:3000/denunciasVPV"
+
+    const xhttp = new XMLHttpRequest();
+    
+    xhttp.open('GET',url,true);
+    
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200){
+            let datos = JSON.parse(this.responseText);
+    
+            let cont = document.querySelector('#TVV');
+    
+            cont.innerHTML = '';
+            for(let item of datos){
+                console.log(item.cant);
+    
                 cont.innerHTML = item.cant;
             }
         }
