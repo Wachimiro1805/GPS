@@ -29,8 +29,8 @@
 
 
   <!-- Custom styles for this template -->
-  <link href="/css/index.css" rel="stylesheet">
-  <link href="/css/denuncias.css" rel="stylesheet">
+  <link href="../css/index.css" rel="stylesheet">
+  <link href="../css/denuncias.css" rel="stylesheet">
 </head>
 
 <body>
@@ -38,7 +38,7 @@
   <nav class="navbar navbar-expand-md navbar-light fixed-top " style="background-color: #def7eb;">
     <div class="container-fluid">
       <div style="display: flex; flex-direction: row; padding-right: 2rem;">
-        <a class="navbar-brand" href="/index.html"><img src="/images/logo.png" width="150" height="100"></a>
+        <a class="navbar-brand" href="../index.html"><img src="../images/logo.png" width="150" height="100"></a>
         <div style="padding-top: 2rem; padding-left:7rem;">
           <button style="width: 100%; height: 50%; " class="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
@@ -51,19 +51,19 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ms-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link" href="/index.html">Inicio</a>
+            <a class="nav-link" href="../index.html">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/html/tipos.html">¿Qué es la violencia?</a>
+            <a class="nav-link" href="../html/tipos.html">¿Qué es la violencia?</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/html/denuncias.html">Denuncias</a>
+            <a class="nav-link" href="../html/denuncias.html">Denuncias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/estadisticas.html">Estadísticas</a>
+            <a class="nav-link" href="../estadisticas.html">Estadísticas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/html/Login.html">Iniciar sesión</a>
+            <a class="nav-link" href="../html/Login.html">Iniciar sesión</a>
           </li>
         </ul>
       </div>
@@ -88,15 +88,15 @@
               <div class="formulario-denunciante1">
                 <p>
                   <label>Nombre Completo</label>
-                  <input class="redondeado" type="text" name="nombre" required>
+                  <input class="redondeado" type="text" name="nombre" id="nombreDenunciante" required>
                 </p>
                 <p>
                   <label>Datos Contacto</label>
-                  <input class="redondeado" type="text" name="contacto">
+                  <input class="redondeado" type="text" name="contacto" id="contacto">
                 </p>
                 <p>
                   <label>Sexo</label>
-                  <select class="redondeado" name="sexo" required>
+                  <select class="redondeado" name="sexo" id="sexoDenunciante" required>
                     <option> </option>
                     <option value="H">Hombre</option>
                     <option value="M">Mujer</option>
@@ -104,7 +104,18 @@
                 </p>
                 <p>
                   <label>Edad</label>
-                  <input class="redondeado" type="text" name="edad" required>
+                  <input class="redondeado" type="number" name="edad" id="edadDenunciante" required>
+                </p>
+                <p>
+                  <label>Rol del Denunciante</label>
+                  <select name="rol-denunciante" id="rolDenunciante" required>
+                    <option value="Estudiante">Estudiante</option>
+                    <option value="Maestro">Maestro</option>
+                    <option value="Director">Director</option>
+                    <option value="Personal Administrativo">Personal Administrativo</option>
+                    <option value="Personal de Labores Varias">Personal de Labores Varias</option>
+                    <option value="Personas Ajenas a la Escuela">Personas Ajenas a la Escuela</option>
+                  </select>
                 </p>
               </div>
             </details>
@@ -116,19 +127,19 @@
               <div class="formulario-agresor">
                 <p>
                   <label>Nombre </label>
-                  <input class="redondeado" type="text" name="nombre" required>
+                  <input class="redondeado" type="text" name="nombre" id="nombresAbusador" required>
                 </p>
                 <p>
                   <label>Apellido Paterno</label>
-                  <input class="redondeado" type="text" name="ap" required>
+                  <input class="redondeado" type="text" name="ap" id="ap" required>
                 </p>
                 <p>
                   <label>Apellido Materno</label>
-                  <input class="redondeado" type="text" name="am" required>
+                  <input class="redondeado" type="text" name="am" id="am" required>
                 </p>
                 <p>
                   <label>Sexo</label>
-                  <select class="redondeado" name="sexo" required>
+                  <select class="redondeado" name="sexo" id="sexoAbusador" required>
                     <option> </option>
                     <option value="H">Hombre</option>
                     <option value="M">Mujer</option>
@@ -136,7 +147,7 @@
                 </p>
                 <p>
                   <label>Rol del Abusador</label>
-                  <select class="redondeado" name="rol-acosador" required>
+                  <select class="redondeado" name="rol-acosador" id="rol-abusador" required>
                     <option value="Compañero de clase">Compañero de clase</option>
                     <option value="Compañero de escuela">Compañero de escuela</option>
                     <option value="Relación de Noviazgo dentro de la Escuela">Relación de Noviazgo dentro de la Escuela
@@ -160,7 +171,7 @@
               <div class="formulario-institucion">
                 <p>
                   <label>¿En tu institución recibes información sobre la violencia?</label>
-                  <select class="redondeado" name="informacion-violencia" required>
+                  <select class="redondeado" name="informacion-violencia" id="informacion-violencia" required>
                     <option> </option>
                     <option value="Y">Si</option>
                     <option value="N">No</option>
@@ -168,7 +179,7 @@
                 </p>
                 <p>
                   <label>¿En tu institución existen mecanismos para reportar la violencia?</label>
-                  <select class="redondeado" name="mecanismos-violencia" required>
+                  <select class="redondeado" name="mecanismos-violencia" id="mecanismos-violencia" required>
                     <option> </option>
                     <option value="Y">Si</option>
                     <option value="N">No</option>
@@ -184,21 +195,27 @@
               <div class="formulario-denuncia">
                 <p>
                   <label>Municipio del Estado</label>
-                  <select class="redondeado" name="municipio" required>
-                    <option value=""></option>
-                    <option value=""></option>
+                  <select class="redondeado" name="municipio"  id="municipio" required>
+
+                  </select>
+                </p>
+                <p>
+                  <label>Nivel de la Escuela</label>
+                  <select name="nivel" id="nivel">
+                      <option value="">Todos</option>
+                      <option value="Media S">Media S</option>
+                      <option value="Superior">Superior</option>
                   </select>
                 </p>
                 <p>
                   <label>Escuelas del Estado</label>
-                  <select class="redondeado" name="escuelas" required>
-                    <option value=""></option>
-                    <option value=""></option>
+                  <select class="redondeado" name="escuelas" id="escuela" required>
+
                   </select>
                 </p>
                 <p>
                   <label>Tipo de Violencia</label>
-                  <select class="redondeado" name="tipo-violencia" required>
+                  <select class="redondeado" name="tipo-violencia" id="tipo-violencia" required>
                     <option value="Patrimonial">Patrimonial</option>
                     <option value="Sexual">Sexual</option>
                     <option value="Física">Física</option>
@@ -207,7 +224,7 @@
                 </p>
                 <p>
                   <label>¿Sucedió algo al respecto?</label>
-                  <select class="redondeado" name="sucedió-algo" required>
+                  <select class="redondeado" name="sucedió-algo" id="sucedió-algo" required>
                     <option value="No, no me quisieron atender">No, no me quisieron atender</option>
                     <option value="No, no quisieron levantarme la denuncia">No, no quisieron levantarme la denuncia
                     </option>
@@ -223,7 +240,7 @@
                 </p>
                 <p>
                   <label>Gravedad del Abuso</label>
-                  <select class="redondeado" name="gravedad-asunto" required>
+                  <select class="redondeado" name="gravedad-asunto" id="gravedad-asunto" required>
                     <option value="Muy Bajo">Muy Bajo</option>
                     <option value="Bajo">Bajo</option>
                     <option value="Medio">Medio</option>
@@ -233,7 +250,7 @@
                 </p>
                 <p>
                   <label>Zona del Incidente</label>
-                  <select class="redondeado" name="zona-incidente" required>
+                  <select class="redondeado" name="zona-incidente" id="zona-incidente" required>
                     <option value="Dentro del Aula">Dentro del Aula</option>
                     <option value="En oficina/privado">En oficina/privado</option>
                     <option value="Áreas comunes">Áreas comunes</option>
@@ -245,7 +262,7 @@
                 </p>
                 <p>
                   <label>¿Qué acción tomó?</label>
-                  <select class="redondeado" name="acciones-tomadas" required>
+                  <select class="redondeado" name="acciones-tomadas" id="acciones-tomadas" required>
                     <option value="Ninguna">Ninguna</option>
                     <option value="Denuncié ante un maestro">Denuncié ante un maestro</option>
                     <option value="Denuncié ante una autoridad escolar">Denuncié ante una autoridad escolar</option>
@@ -253,8 +270,18 @@
                   </select>
                 </p>
                 <p>
+                  <label>Aproximadamente, ¿Hace cuanto ocurrió?</label>
+                  <select name="temporalidad" id="temporalidad" required>
+                      <option value="Más de 12 m">Más de 12 m</option>
+                      <option value="Entre 6 y 12 m">Entre 6 y 12 m</option>
+                      <option value="Entre 3 y 6 m">Entre 3 y 6 m</option>
+                      <option value="Menos de 3 m">Menos de 3 m</option>
+                      <option value="En los últimos 15 días">En los últimos 15 días</option>
+                  </select>
+                </p>
+                <p>
                   <label>¿Se adquirió un servicio externo?</label>
-                  <select class="redondeado" name="servicio-externo" required>
+                  <select class="redondeado" name="servicio-externo" id="servicio-externo" required>
                     <option value="Atención Psicológica">Atención Psicológica</option>
                     <option value="Atención psiquiátrica">Atención psiquiátrica</option>
                     <option value="Atención médica">Atención médica</option>
@@ -264,10 +291,10 @@
                 </p>
                 <p class="full">
                   <label>Descripción de la agresión</label>
-                  <textarea class="redondeado" name="descripcion-abuso" required></textarea>
+                  <textarea class="redondeado" name="descripcion-abuso" id="descripcion-abuso" required></textarea>
                 </p>
                 <p class="full">
-                  <button class="boton-enviar">Enviar</button>
+                  <button class="boton-enviar" id="boton-enviar">Enviar</button>
                 </p>
               </div>
             </details>
@@ -284,7 +311,7 @@
       <li>
         <i class="fa fa-map-marker"></i>
         <a href="https://www.facebook.com/promexac/" target="_blank" rel="noopener noreferrer">
-          <img src="/images/logoFace.png">
+          <img src="../images/logoFace.png">
         </a>
       </li>
       <li><i class="fa fa-mobile"></i>311 264 0466</li>
@@ -292,5 +319,7 @@
     </ul>
   </div>
 </footer>
-
+<script src="../extensiones/scripts_páginas/datosEscuelas.js"></script>
+<script src="../extensiones/scripts_páginas/datosMunicipios.js"></script>
+<script src="../extensiones/scripts_páginas/inserciondenuncias.js"></script>
 </html>
