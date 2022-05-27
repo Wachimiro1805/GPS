@@ -45,3 +45,28 @@ export const getDenuncianteEspecifico = async (req,res)=>{
         res.send(error.message);
     }
 }
+
+export const getDenunciantesH = async (req,res)=>{
+    try{
+        const pool = await getConnection();
+        const result = await pool.request()
+            .query(queries.getDenuncianteH);
+
+        res.send(result.recordset)
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}
+export const getDenunciantesM = async (req,res)=>{
+    try{
+        const pool = await getConnection();
+        const result = await pool.request()
+            .query(queries.getDenuncianteM);
+
+        res.send(result.recordset)
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}

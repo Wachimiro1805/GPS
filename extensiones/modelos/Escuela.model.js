@@ -47,3 +47,28 @@ export const getEscuelasByLevelAndState = async (req,res) => {
 
     res.send(result.recordset);
 }
+
+export const getEscuelasMS = async (req,res)=>{
+    try{
+        const pool = await getConnection();
+        const result = await pool.request()
+            .query(queries.getEscuelasMS);
+
+        res.send(result.recordset)
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}
+export const getEscuelaS = async (req,res)=>{
+    try{
+        const pool = await getConnection();
+        const result = await pool.request()
+            .query(queries.getEscuelaS);
+
+        res.send(result.recordset)
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}

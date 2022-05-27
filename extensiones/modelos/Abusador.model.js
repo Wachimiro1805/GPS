@@ -43,3 +43,28 @@ export const getAbusadorEspecifico = async(req,res) => {
         res.send(error.message);
     }
 }
+
+export const getAbusadorH = async (req,res)=>{
+    try{
+        const pool = await getConnection();
+        const result = await pool.request()
+            .query(queries.getAbusadorH);
+
+        res.send(result.recordset)
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}
+export const getAbusadorM = async (req,res)=>{
+    try{
+        const pool = await getConnection();
+        const result = await pool.request()
+            .query(queries.getAbusadorM);
+
+        res.send(result.recordset)
+    } catch (error) {
+        res.status(500);
+        res.send(error.message);
+    }
+}
