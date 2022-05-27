@@ -140,8 +140,7 @@ tr:nth-child(even) {
   /*Ajuste de la pantalla Movil de  Tipos de Violencia*/
   /*Estadisticas*/
 
-  body,
-  td {
+  body{
     font-size: xx-small;
   }
 
@@ -157,7 +156,22 @@ tr:nth-child(even) {
     height: auto;
 
   }
-
+  th {
+    padding: 0.5rem 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background-color: #dee8f5;
+  
+  }
+  
+  /* Agrega un padding en cada celda */
+  td {
+    padding: 0.5rem 0.5rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-size: xx-small;
+  }
   
   
 }
