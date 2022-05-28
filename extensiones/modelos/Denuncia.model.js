@@ -258,3 +258,98 @@ export const getDenunciasporMunicipio = async(req,res)=>{
         res.send(error.message);
     }
 }
+
+export const getDenunciasporInsti = async(req,res)=>{
+    try{
+        const {escuela} = req.params;
+        const pool = await getConnection();
+        const result = await pool.request()
+            .input('escuela',escuela)
+            .query(queries.getDenunciasPorInsti);
+
+        res.send(result.recordset);
+    } catch(error){
+        res.status(500);
+        res.send(error.message);
+    }
+}
+
+export const getDenunciasPorNivel = async(req,res)=>{
+    try {
+        const {nivel} = req.params;
+        const pool = await getConnection();
+        const result = await pool.request()
+            .input('nivel',nivel)
+            .query(queries.getDenunciasPoNivel);
+
+        res.send(result.recordset);
+    } catch(error){
+        res.status(500);
+        res.send(error.message);
+    }
+}
+
+export const getDenunciasporInstiNiv = async(req,res)=>{
+    try{
+        const {escuela, nivel} = req.params;
+        const pool = await getConnection();
+        const result = await pool.request()
+            .input('escuela',escuela)
+            .input('nivel',nivel)
+            .query(queries.getDenunciasPorInstiNiv)
+
+        res.send(result.recordset);
+    }catch(error){
+        res.status(500);
+        res.send(error.message);
+    }
+}
+
+export const getDenunciasporMuniNiv = async(req,res)=>{
+    try{
+        const {municipio, nivel} = req.params;
+        const pool = await getConnection();
+        const result = await pool.request()
+            .input('municipio',municipio)
+            .input('nivel',nivel)
+            .query(queries.getDenunciasPorMuniNiv);
+
+        res.send(result.recordset);
+    } catch(error){
+        res.status(500);
+        res.send(error.message);
+    }
+}
+
+export const getDenunciasporMuniInsti = async(req,res)=>{
+    try{
+        const {municipio, escuela} = req.params;
+        const pool = await getConnection();
+        const result = await pool.request()
+            .input('municipio',municipio)
+            .input('escuela',escuela)
+            .query(queries.getDenunciasPorMuniInsti);
+
+        res.send(result.recordset);
+    } catch(error){
+        res.status(500);
+        res.send(error.message);
+    }
+}
+
+export const getDenunciasporMuniInstiNiv = async(req,res)=>{
+    try{
+        const {municipio, escuela, nivel} = req.params;
+        const pool = await getConnection();
+        const result = await pool.request()
+            .input('municipio',municipio)
+            .input('escuela',escuela)
+            .input('nivel',nivel)
+            .query(queries.getDenunciasPorMuniInstiNiv);
+
+        res.send(result.recordset);
+    } catch(error){
+        res.status(500);
+        res.send(error.message);
+    }
+}

@@ -79,3 +79,13 @@ get http://localhost:3000/abusador/José Antonio&Lozano&Probando&H&Compañero de
 ###
 
 get http://localhost:3000/denunciante/Martín Guillermo Hoyos Sifuentes&meteorickestrel@gmail&H&23&Estudiante
+
+###
+
+post http://localhost:3000/login
+Content-Type:  application/json
+
+{
+    "usuario":"Panchito", 
+    "password":""
+}

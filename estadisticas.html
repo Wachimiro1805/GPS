@@ -86,14 +86,16 @@
               <select class="redondeado" name="municipio"  id="municipio" required>
 
               </select>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="filInstitucion">Institución</label>
-              <input type="text" class="form-control" id="filInstitucion" placeholder="Institución">
-            </div>
-            <div class="form-group col-md-4">
-              <label for="filNivel">Nivel</label>
-              <input type="text" class="form-control" id="filNivel" placeholder="Nivel">
+              <label>Nivel de la Escuela</label>
+              <select name="nivel" id="nivel">
+                  <option value="">Todos</option>
+                  <option value="Media S">Media S</option>
+                  <option value="Superior">Superior</option>
+              </select>
+                <label>Escuelas del Estado</label>
+                <select name="escuelas" id="escuela" required>
+
+                </select>
             </div>
             <div class="row">
               <div class="form-group col-md-3">
@@ -237,4 +239,5 @@
 </footer>
 <script src="./extensiones/scripts_páginas/consultasDenuncias.js"></script>
 <script src="./extensiones/scripts_páginas/datosMunicipios.js"></script>
+<script src="./extensiones/scripts_páginas/datosEscuelas.js"></script>
 </html>

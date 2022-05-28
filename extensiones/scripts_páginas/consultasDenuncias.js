@@ -3,7 +3,10 @@ traerDH(); traerDM();
 traerAH(); traerAM();
 traerDenunciasEnMS(); traerDenunciasEnS();
 traerDenunciasP(); traerDenunciasF(); traerDenunciasPV(); traerDenunciasS();
+// Adiciones de los addevent
 document.querySelector('#municipio').addEventListener('change',filtrar);
+document.querySelector('#nivel').addEventListener('change',filtrar);
+document.querySelector('#escuela').addEventListener('change',filtrar);
 
 function traerDatos(){
     let url = "http://localhost:3000/denuncias"
@@ -276,32 +279,31 @@ function traerDenunciasPV(){
 
 function filtrar() {
     const municipio = document.querySelector('#municipio').value;
-    const insti = document.querySelector('#filInstitucion').value;
-    const nivel = document.querySelector('#filNivel').value;
+    const insti = document.querySelector('#escuela').value;
+    const nivel = document.querySelector('#nivel').value;
 
     if(municipio != "" && insti != "" && nivel != "" ){
-        
+        filtrarPorMuniInstiNiv(municipio,insti,nivel);
     }else if(municipio != "" && insti != "" ){
-
+        filtrarPorMuniInsti(municipio,insti);
     }else if(municipio != "" && nivel != "" ){
-
+        filtrarPorMuniNiv(municipio,nivel);
     }else if(insti != "" && nivel != ""){
-
+        filtrarPorInstiNiv(insti,nivel);
     }else if (municipio != ""){
         filtarPorMunicipio(municipio);
     }else if (insti != ""){
-
+        filtrarPorInsti(insti);
     }else if (nivel != ""){
-        
+        filtrarPorNivel(nivel);
+    } else {
+        traerDatos();
     }
 }
 
 function filtarPorMunicipio(valormuni){ 
-
-    console.log(valormuni);
+    
     let url = "http://localhost:3000/denunciaspm/"+valormuni;
-
-    console.log(url);
 
     const xhttp = new XMLHttpRequest();
 
@@ -328,4 +330,179 @@ function filtarPorMunicipio(valormuni){
         }
     }
     xhttp.send();
+}
+
+function filtrarPorInsti(valorinsti){
+    let url = "http://localhost:3000/denunciaspi/"+valorinsti;
+
+    const xhttp = new XMLHttpRequest();
+
+    xhttp.open('GET',url,true);
+
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200){
+            let datos = JSON.parse(this.responseText);
+            let cont = document.querySelector('#names');
+
+            cont.innerHTML = '';
+            for(let item of datos){
+                cont.innerHTML += `
+                <tr>
+                    <td>${item.nombreAbusador}</td>
+                    <td>${item.hechos}</td>
+                    <td>${item.tipoV}</td>
+                    <td>${item.municipio}</td>
+                    <td>${item.insti}</td>
+                    <td>${item.ns}</td>
+                </tr>
+                `
+            }
+        }
+    }
+    xhttp.send();
+}
+
+function filtrarPorNivel(valornivel){
+    let url = "http://localhost:3000/denunciaspn/"+valornivel;
+
+    const xhttp = new XMLHttpRequest();
+    xhttp.open('GET',url,true);
+
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200){
+            let datos = JSON.parse(this.responseText);
+            let cont = document.querySelector('#names');
+
+            cont.innerHTML = '';
+            for(let item of datos){
+                cont.innerHTML += `
+                <tr>
+                    <td>${item.nombreAbusador}</td>
+                    <td>${item.hechos}</td>
+                    <td>${item.tipoV}</td>
+                    <td>${item.municipio}</td>
+                    <td>${item.insti}</td>
+                    <td>${item.ns}</td>
+                </tr>
+                `
+            }
+        }
+    }
+    xhttp.send(); 
+}
+
+function filtrarPorInstiNiv(valorinsti,valornivel){
+    let url = "http://localhost:3000/denunciaspin/"+valorinsti+"&"+valornivel;
+
+    const xhttp = new XMLHttpRequest();
+    xhttp.open('GET',url,true);
+
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200){
+            let datos = JSON.parse(this.responseText);
+            let cont = document.querySelector('#names');
+
+            cont.innerHTML = '';
+            for(let item of datos){
+                cont.innerHTML += `
+                <tr>
+                    <td>${item.nombreAbusador}</td>
+                    <td>${item.hechos}</td>
+                    <td>${item.tipoV}</td>
+                    <td>${item.municipio}</td>
+                    <td>${item.insti}</td>
+                    <td>${item.ns}</td>
+                </tr>
+                `
+            }
+        }
+    }
+    xhttp.send(); 
+}
+
+function filtrarPorMuniNiv(valormuni,valornivel){
+    let url = "http://localhost:3000/denunciaspmn/"+valormuni+"&"+valornivel;
+
+    const xhttp = new XMLHttpRequest();
+    xhttp.open('GET',url,true);
+
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200){
+            let datos = JSON.parse(this.responseText);
+            let cont = document.querySelector('#names');
+
+            cont.innerHTML = '';
+            for(let item of datos){
+                cont.innerHTML += `
+                <tr>
+                    <td>${item.nombreAbusador}</td>
+                    <td>${item.hechos}</td>
+                    <td>${item.tipoV}</td>
+                    <td>${item.municipio}</td>
+                    <td>${item.insti}</td>
+                    <td>${item.ns}</td>
+                </tr>
+                `
+            }
+        }
+    }
+    xhttp.send(); 
+}
+
+function filtrarPorMuniInsti(valormuni,valorinsti){
+    let url = "http://localhost:3000/denunciaspmi/"+valormuni+"&"+valorinsti
+
+    const xhttp = new XMLHttpRequest();
+    xhttp.open('GET',url,true);
+
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200){
+            let datos = JSON.parse(this.responseText);
+            let cont = document.querySelector('#names');
+
+            cont.innerHTML = '';
+            for(let item of datos){
+                cont.innerHTML += `
+                <tr>
+                    <td>${item.nombreAbusador}</td>
+                    <td>${item.hechos}</td>
+                    <td>${item.tipoV}</td>
+                    <td>${item.municipio}</td>
+                    <td>${item.insti}</td>
+                    <td>${item.ns}</td>
+                </tr>
+                `
+            }
+        }
+    }
+    xhttp.send(); 
+}
+
+function filtrarPorMuniInstiNiv(valormuni,valorinsti,valornivel){
+    let url = "http://localhost:3000/denunciaspmin/"+valormuni+"&"+valorinsti+"&"+valornivel;
+
+    const xhttp = new XMLHttpRequest();
+    xhttp.open('GET',url,true);
+
+    xhttp.onreadystatechange = function() {
+        if(this.readyState == 4 && this.status == 200){
+            let datos = JSON.parse(this.responseText);
+            let cont = document.querySelector('#names');
+
+            cont.innerHTML = '';
+            for(let item of datos){
+                cont.innerHTML += `
+                <tr>
+                    <td>${item.nombreAbusador}</td>
+                    <td>${item.hechos}</td>
+                    <td>${item.tipoV}</td>
+                    <td>${item.municipio}</td>
+                    <td>${item.insti}</td>
+                    <td>${item.ns}</td>
+                </tr>
+                `
+            }
+        }
+    }
+    xhttp.send(); 
 }
