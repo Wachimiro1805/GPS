@@ -54,7 +54,7 @@
             <a class="nav-link" href="../index.html">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../html/tipos.html">¿Qué es la violencia?</a>
+            <a class="nav-link" href="../html/tipos.html">Tipos de Violencia</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../html/denuncias.html">Denuncias</a>
@@ -76,6 +76,35 @@
     <div class="contenedor">
       <h1 class="logo"><span class="nombre-empresa">PROMEX</span></h1>
       <div class="wrapper animated bounceInLeft">
+
+
+        <!--###############################DATOS INSTITUCIÓN##################################-->
+        <details>
+          <summary>
+            <h4>Datos de la Institución</h4>
+          </summary>
+          <div class="formulario-institucion">
+
+            <p>
+              <label>Escuelas del Estado</label>
+              <select class="redondeado" name="escuelas" id="escuela" required></select>
+            </p>
+            <p>
+              <label>Nivel de la Escuela</label>
+              <select class="redondeado"name="nivel" id="nivel">
+                <option value="">Todos</option>
+                <option value="Media S">Media S</option>
+                <option value="Superior">Superior</option>
+              </select>
+            </p>
+            <p>
+              <label>Municipio del Estado</label>
+              <select class="redondeado" name="municipio" id="municipio" required></select>
+            </p>
+
+          </div>
+        </details>
+
 
         <!--###############################DENUNCIANTE##################################-->
         <div class="contacto-denunciante">
@@ -108,7 +137,7 @@
                 </p>
                 <p>
                   <label>Rol del Denunciante</label>
-                  <select name="rol-denunciante" id="rolDenunciante" required>
+                  <select class="redondeado"name="rol-denunciante" id="rolDenunciante" required>
                     <option value="Estudiante">Estudiante</option>
                     <option value="Maestro">Maestro</option>
                     <option value="Director">Director</option>
@@ -163,56 +192,14 @@
                 </p>
               </div>
             </details>
-            <!--###############################DATOS INSTITUCIÓN##################################-->
-            <details>
-              <summary>
-                <h4>Datos de la Institución</h4>
-              </summary>
-              <div class="formulario-institucion">
-                <p>
-                  <label>¿En tu institución recibes información sobre la violencia?</label>
-                  <select class="redondeado" name="informacion-violencia" id="informacion-violencia" required>
-                    <option> </option>
-                    <option value="Y">Si</option>
-                    <option value="N">No</option>
-                  </select>
-                </p>
-                <p>
-                  <label>¿En tu institución existen mecanismos para reportar la violencia?</label>
-                  <select class="redondeado" name="mecanismos-violencia" id="mecanismos-violencia" required>
-                    <option> </option>
-                    <option value="Y">Si</option>
-                    <option value="N">No</option>
-                  </select>
-                </p>
-              </div>
-            </details>
+
             <!--###############################DATOS DENUNCIA##################################-->
             <details>
               <summary>
                 <h4>Datos de la Denuncia</h4>
               </summary>
               <div class="formulario-denuncia">
-                <p>
-                  <label>Municipio del Estado</label>
-                  <select class="redondeado" name="municipio"  id="municipio" required>
 
-                  </select>
-                </p>
-                <p>
-                  <label>Nivel de la Escuela</label>
-                  <select name="nivel" id="nivel">
-                      <option value="">Todos</option>
-                      <option value="Media S">Media S</option>
-                      <option value="Superior">Superior</option>
-                  </select>
-                </p>
-                <p>
-                  <label>Escuelas del Estado</label>
-                  <select class="redondeado" name="escuelas" id="escuela" required>
-
-                  </select>
-                </p>
                 <p>
                   <label>Tipo de Violencia</label>
                   <select class="redondeado" name="tipo-violencia" id="tipo-violencia" required>
@@ -272,11 +259,11 @@
                 <p>
                   <label>Aproximadamente, ¿Hace cuanto ocurrió?</label>
                   <select name="temporalidad" id="temporalidad" required>
-                      <option value="Más de 12 m">Más de 12 m</option>
-                      <option value="Entre 6 y 12 m">Entre 6 y 12 m</option>
-                      <option value="Entre 3 y 6 m">Entre 3 y 6 m</option>
-                      <option value="Menos de 3 m">Menos de 3 m</option>
-                      <option value="En los últimos 15 días">En los últimos 15 días</option>
+                    <option value="Más de 12 m">Más de 12 m</option>
+                    <option value="Entre 6 y 12 m">Entre 6 y 12 m</option>
+                    <option value="Entre 3 y 6 m">Entre 3 y 6 m</option>
+                    <option value="Menos de 3 m">Menos de 3 m</option>
+                    <option value="En los últimos 15 días">En los últimos 15 días</option>
                   </select>
                 </p>
                 <p>
@@ -293,11 +280,40 @@
                   <label>Descripción de la agresión</label>
                   <textarea class="redondeado" name="descripcion-abuso" id="descripcion-abuso" required></textarea>
                 </p>
+
+              </div>
+            </details>
+
+
+            <!--###############################Procedimiento de Denuncia##################################-->
+            <details>
+              <summary>
+                <h4>Procedimiento de Denuncia</h4>
+              </summary>
+              <div class="formulario-procedimiento-denuncia">
+                <p>
+                  <label>¿En tu institución recibes información sobre la violencia?</label>
+                  <select class="redondeado" name="informacion-violencia" id="informacion-violencia" required>
+                    <option> </option>
+                    <option value="Y">Si</option>
+                    <option value="N">No</option>
+                  </select>
+                </p>
+                <p>
+                  <label>¿En tu institución existen mecanismos para reportar la violencia?</label>
+                  <select class="redondeado" name="mecanismos-violencia" id="mecanismos-violencia" required>
+                    <option> </option>
+                    <option value="Y">Si</option>
+                    <option value="N">No</option>
+                  </select>
+                </p>
                 <p class="full">
                   <button class="boton-enviar" id="boton-enviar">Enviar</button>
                 </p>
               </div>
             </details>
+
+
           </form>
         </div>
         <!--#####################################################################-->
@@ -322,4 +338,5 @@
 <script src="../extensiones/scripts_páginas/datosEscuelas.js"></script>
 <script src="../extensiones/scripts_páginas/datosMunicipios.js"></script>
 <script src="../extensiones/scripts_páginas/inserciondenuncias.js"></script>
+
 </html>
