@@ -79,6 +79,63 @@
 
     <div class="">
       <div class="app table-responsive">
+        <form>
+          <div class="row">
+            <div class="form-group col-md-4">
+              <label>Municipio del Estado</label>
+              <select class="redondeado" name="municipio"  id="municipio" required>
+
+              </select>
+              <label>Nivel de la Escuela</label>
+              <select name="nivel" id="nivel">
+                  <option value="">Todos</option>
+                  <option value="Media S">Media S</option>
+                  <option value="Superior">Superior</option>
+              </select>
+                <label>Escuelas del Estado</label>
+                <select name="escuelas" id="escuela" required>
+
+                </select>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-3">
+                <button class="btn btn-primary" id="btnfiltrar">Filtrar</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <table class="table ">
+          <thead>
+            <tr>
+              <th role="columnheader">Nombre del Agresor</th>
+              <th role="columnheader">Descripcion</th>
+              <th role="columnheader">Tipo de Violencia</th>
+              <th role="columnheader">Municipio</th>
+              <th role="columnheader">Institución</th>
+              <th role="columnheader">Nivel de Institución</th>
+
+            </tr>
+          </thead>
+          <tbody id="names">
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+ 
+          </tbody>
+        </table>
+      </div>
+      
+    </div>
+
     <div class="item-b">
       <table>
         <thead>
