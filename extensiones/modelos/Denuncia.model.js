@@ -4,7 +4,7 @@ export const getDenuncias = async (req,res) => {
 try {
     const pool = await getConnection();
     const result = await pool.request().query(queries.getDenunciasWithPublicInfo);
-    console.log(result);
+    //console.log(result);
 
     res.json(result.recordset);
 } catch (error){
