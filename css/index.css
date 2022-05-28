@@ -8,9 +8,11 @@
   margin: 0;
   padding: 0;
 }
-p{
+
+p {
   text-align: justify;
 }
+
 body {
   min-height: 40rem;
   padding-top: 10rem;
@@ -23,38 +25,58 @@ nav {
 }
 
 /*----------Seccion de Inicio---------*/
+.imagen {
+  text-align: center;
+}
+
 .imagen img {
-  margin-top: 4%;
-  width: 100%;
+  width: 50%;
+  margin-bottom: 2rem;
 }
 
 .seccion_violencia {
   background-color: #def7de;
-  padding-left: 80px;
-  padding-right: 80px;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding: 2rem;
 }
 
 .titulo {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: lightslategray;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .info {
-  margin-top: 50px;
-  font-size: 1.4rem;
+  
+  font-size: 1.2rem;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 
 /*---------------Media Querie Movil----------------------*/
 @media (max-width: 768px) {
+  .imagen {
+    text-align: center;
+  }
+
   .imagen img {
-    margin-top: 60px;
-    width: 100%;
-    height: 215px;
+    width: 50%;
+    margin-bottom: 2rem;
+  }
+  .seccion_violencia {
+    background-color: #def7de;
+    padding: 2rem;
+  }
+  
+  .titulo {
+    font-size: 1rem;
+    color: lightslategray;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .info {
+    
+    font-size: 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
 }
@@ -86,7 +108,7 @@ a:focus {
 footer {
   height: auto;
   background-color: #788199;
-  margin-top: 35px;
+
   color: #fff;
   font-weight: 800;
   font-size: 1;
