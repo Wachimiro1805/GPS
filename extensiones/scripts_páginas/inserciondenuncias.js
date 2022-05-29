@@ -1,9 +1,36 @@
-document.querySelector('#boton-enviar').addEventListener('click',funcionallamar)
+document.querySelector('#boton-enviar').addEventListener('click',(event)=>{
+    const hechos = document.querySelector('#descripcion-abuso').value;
+    const idEscuela = document.querySelector('#escuela').value;
+    const ACCIONTOMADA = document.querySelector('#acciones-tomadas').value;
+    const SERVICIOADD = document.querySelector('#servicio-externo').value;
+    const INFOTIPOSVIOLENCIA = document.querySelector('#informacion-violencia').value;
+    const MECANISMOSDENUNCIAS = document.querySelector('#mecanismos-violencia').value;
+    const TEMPORALIDAD = document.querySelector('#temporalidad').value;
+    const ZONA = document.querySelector('#zona-incidente').value;
+    const NIVELGRAVEDAD = document.querySelector('#gravedad-asunto').value;
+    const TIPOVIOLENCIA = document.querySelector('#tipo-violencia').value;
+    const SUCEDIOALGO = document.querySelector('#sucedió-algo').value;
+
+    if(hechos=="" || idEscuela == "" || ACCIONTOMADA == "" || SERVICIOADD == "" || INFOTIPOSVIOLENCIA == "" || MECANISMOSDENUNCIAS == "" || TEMPORALIDAD == "" ||
+        ZONA == "" || NIVELGRAVEDAD == "" || TIPOVIOLENCIA == "" || SUCEDIOALGO == ""){
+            alert("Por lo menos uno de los campos se encuentra vacío, porfavor revise todo y vuelva a intentar");
+            return;
+    }
+    
+    funcionallamar();
+})
+document.querySelector('#nombresAbusador').addEventListener('focusin',(event)=>{insertarDenunciante();});
+document.querySelector('#tipo-violencia').addEventListener('focusin',(event)=>{insertarAbusador();});
+document.querySelector('#sucedió-algo').addEventListener('focusin',(event)=>{if(checadorD && checadorA){actualizaridDenuncianteYAbusador()}});
+document.querySelector('#sucedió-algo').addEventListener('focusout',(event)=>{console.log("Denunciante: "+idDenuncianteRecuperado); console.log("Agresor: "+idAbusadorRecuperado);});
+
 
 
 var idDenuncianteRecuperado;
 var idAbusadorRecuperado;
-var checador = false;
+var checadorD = false;
+var checadorA = false;
+
 
 function insertarDenunciante() {
     const nombreDenunciante = document.querySelector('#nombreDenunciante');
@@ -12,6 +39,11 @@ function insertarDenunciante() {
     const edad = document.querySelector('#edadDenunciante');
     const rol = document.querySelector('#rolDenunciante');
 
+    if (nombreDenunciante.value == "" || contacto.value == "" || sexo.value == "" || edad.value < 1){
+        alert ("Por favor llene todos los datos del Denunciante")
+        return;
+    }
+
     let datos = {
         nombreDenunciante:nombreDenunciante.value,
         contacto:contacto.value,
@@ -19,6 +51,8 @@ function insertarDenunciante() {
         edad:edad.value,
         rol:rol.value
     }
+    
+    checadorD = true;
     
     let url = "http://localhost:3000/denunciante/";
 
@@ -73,6 +107,11 @@ function insertarAbusador() {
     const sexo = document.querySelector('#sexoAbusador');
     const rol = document.querySelector('#rol-abusador');
 
+    if(nombres.value == "" || apellidoPat.value == "" || apellidoMat.value == "" || sexo.value == ""){
+        alert("Porfavor Ingrese todos los Datos del Agresor");
+        return;
+    }
+
     let url = "http://localhost:3000/abusador/";
 
     let datos = {
@@ -89,6 +128,8 @@ function insertarAbusador() {
     xhttp.setRequestHeader('Content-type','application/json');
     
     xhttp.send(JSON.stringify(datos));
+
+    checadorA = true;
 
     //console.log(datos);
 }
@@ -213,19 +254,16 @@ function insertarDenuncia(){
 }
 
 function funcionallamar(){
-    if(checador){
-        actualizaridDenuncianteYAbusador();
-        if(idDenuncianteRecuperado != undefined && idAbusadorRecuperado != undefined){
-            insertarDenuncia();
-            alert("Se ha registrado su Denuncia")
-            checador = false;
-        }
+
+
+
+    if(idDenuncianteRecuperado != undefined && idAbusadorRecuperado != undefined){
+        insertarDenuncia();
+        alert("Se ha registrado su Denuncia")
+        checadorA = false;
+        checadorD = false;
     } else {
-        checador = true;
-        insertarDenunciante();
-        insertarAbusador();
-        actualizaridDenuncianteYAbusador();
-        verificarDatos();
+        alert("Ocurrió un problema al revisar sus datos, porfavor verifique sus datos y vuelva a intentar")
     }
 
 }
