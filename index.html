@@ -1,16 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+<!--INICIO HEAD-->
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/navbar-fixed/">
-
-
-
   <!-- Bootstrap core CSS -->
   <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -26,14 +23,11 @@
       }
     }
   </style>
-
-
   <!-- Custom styles for this template -->
   <link href="./css/index.css" rel="stylesheet">
-</head>
+  <link href="../css/inicio.css" rel="stylesheet">
 
-<body>
-
+  <!--INICIO NAV-->
   <nav class="navbar navbar-expand-md navbar-light fixed-top " style="background-color: #def7eb;">
     <div class="container-fluid">
       <div style="display: flex; flex-direction: row; padding-right: 2rem;">
@@ -59,7 +53,7 @@
             <a class="nav-link" href="./html/denuncias.html">Denuncias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./estadisticas.html">Estadísticas</a>
+            <a class="nav-link" href="./html/estadisticas.html">Estadísticas</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./html/Login.html">Iniciar sesión</a>
@@ -68,8 +62,12 @@
       </div>
     </div>
   </nav>
-  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
+</head>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+<body>
+  <!--INICIO MAIN-->
   <main>
     <div class="imagen">
       <img src="./images/convivencia.png">
@@ -79,13 +77,29 @@
       <p class="info">Es un comportamiento deliberado que puede provocar daños fisicos o psiquicos al projimo. Es
         importante tener en cuenta que mas alla de la agresion fisica, la violencia puede ser emocional mediante ofensas
         o amenzas. Por eso la violencia puede causar tanto secuelas fisicas como psicologicas.</p>
+        
+        <details>
+          <summary>
+            <h4>¿Quiénes somos?</h4>
+          </summary>
+          <p class="info">Somos un equipo multidisciplinario, multicultural; siendo conformada mayoritariamente por mujeres, jóvenes de diversas disciplinas de las áreas sociales; con una amplia experiencia en el trabajo de capacitación, gestión, desarrollo y ejecución de proyectos dentro del ámbito público y social.</p>
+  
+        </details>
+      
+        <details>
+          <summary>
+            <h4>Objetivo Social</h4>
+          </summary>
+          <p class="info">Atención y apoyo a personas que se vean impedidas para satisfacer sus necesidades básicas de subsistencia tales como alimentación, vestido, salud, educación, cultura y capacitación, que necesiten apoyo psicosocial, físico y emocional, que no cuenten con los elementos necesarios para su desarrollo integral y social, a través de mejorar y modificar las circunstancias que impidan al individuo su desarrollo, otorgando servicios que mejoren las condiciones psicosociales, educativas, de salud física, emocional, de autosuficiencia, sustentabilidad, cultura y de orientación social.</p>
+        </details>
+
     </div>
   </main>
-</body>
+  <!--INICIO FOOTER-->
 
+</body>
 <footer>
   <div class="info-empresa">
-
     <ul class="servicios">
       <li><i class="fa fa-map-marker"></i> <a href="https://www.facebook.com/promexac/" target="_blank"
           rel="noopener noreferrer"><img src="./images/logoFace.png"></a></li>
@@ -94,5 +108,4 @@
     </ul>
   </div>
 </footer>
-
 </html>
