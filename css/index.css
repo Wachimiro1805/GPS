@@ -36,7 +36,10 @@ nav {
 
 .seccion_violencia {
   background-color: #def7de;
-  padding: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
 }
 
 .titulo {
