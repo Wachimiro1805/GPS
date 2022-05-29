@@ -1,8 +1,5 @@
 document.querySelector('#boton-enviar').addEventListener('click',funcionallamar)
-//document.querySelector('#pruebaInsercionDenunciante').addEventListener('click',insertarDenunciante);
-//document.querySelector('#pruebaRecuperadoIdDenunciante').addEventListener('click',recuperarIdDenunciante);
-//document.querySelector('#pruebaInsercionAbusador').addEventListener('click',insertarAbusador);
-//document.querySelector('#pruebaRecuperadoIdAbusador').addEventListener('click',recuperarIdAbusador);
+
 
 var idDenuncianteRecuperado;
 var idAbusadorRecuperado;
@@ -44,7 +41,6 @@ function setidDenuncianteRecuperado(valor){
 }
 
 function recuperarIdDenunciante() {
-
 
     const nombreDenunciante = document.querySelector('#nombreDenunciante');
     const contacto = document.querySelector('#contacto');
@@ -222,10 +218,8 @@ function funcionallamar(){
         if(idDenuncianteRecuperado != undefined && idAbusadorRecuperado != undefined){
             insertarDenuncia();
             alert("Se ha registrado su Denuncia")
-            //console.log("Denunciante: "+idDenuncianteRecuperado+" y Abusador: "+idAbusadorRecuperado);
             checador = false;
         }
-        //console.log("Denunciante: "+idDenuncianteRecuperado+" y Abusador: "+idAbusadorRecuperado);
     } else {
         checador = true;
         insertarDenunciante();
@@ -233,4 +227,5 @@ function funcionallamar(){
         actualizaridDenuncianteYAbusador();
         verificarDatos();
     }
+
 }
