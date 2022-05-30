@@ -5,15 +5,20 @@ const __dirname = path.resolve();
 
 export const consultarLogin = async (req,res) => {
     const { usuario, password } = req.body;
-
-    if(usuario == null || password == null){ 
-        return res.status(400).json({msg : 'Usuario y/o contraseña incorrectos'});
+    console.log(req.body)
+    if(usuario == null || password == null || usuario == '' || password == ''){ 
+    //res.json({msg : 'Usuario y/o contraseña incorrectos',error:true});
+    //swal("Oops!", "Something went wrong on the page!", "error");
+    res.json({msg : 'Usuario y/o contraseña incorrectos',error:true});
+        return
+        
     }
     
     console.log('usuario: '+usuario)
     console.log('contraseña: '+password)
-    try {
 
+    try {
+        
         const pool = await getConnection();
 
         /*
@@ -36,14 +41,21 @@ export const consultarLogin = async (req,res) => {
         console.log(results)
         if(results.rowsAffected[0] != 0){
             console.log('Acceso correcto')
-            res.sendFile('html/denuncias.html', { root: __dirname });
+            //res.send('Acceso exitoso')
+            console.log(results.recordset[0].tipoU)
+            res.json({msg : results.recordset[0].tipoU, error:false});
+            return
+            
         }
         else{
-            res.send('Datos incorrectos')
+            //res.send('Datos incorrectos')
+            res.json({msg : 'Usuario incorrecto',error:true});
+            return
         }
 
     } catch (error) {
-        res.status(500);
-        res.send(error.message);
+        //res.status(500);
+        //res.send(error.message);
+        res.json({msg : error.message, error:true});
     }
 }

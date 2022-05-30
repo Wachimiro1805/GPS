@@ -33,6 +33,6 @@ export const queries = {
     getMunicipios: "select * from MUNICIPIOS",
     getLogin: "select * from ADMINISTRADORES WHERE usuario = @usuario COLLATE SQL_Latin1_General_CP1_CS_AS AND contra = @password COLLATE SQL_Latin1_General_CP1_CS_AS",
     getSuperLogin : "select * from ADMINISTRADORES WHERE usuario = @usuario AND contra = @contra",
-    registerNewAdministrador: "INSERT INTO ADMINISTRADORES values (@usuario, @Nusuario , @password)"
+    registerNewAdministrador: "INSERT INTO ADMINISTRADORES values (@usuario, @Nusuario , @password, 'n')",
 
 }

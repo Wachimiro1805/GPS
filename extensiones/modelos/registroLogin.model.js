@@ -6,8 +6,9 @@ const __dirname = path.resolve();
 export const registrarLogin = async (req,res) => {
     const { Nusuario, usuario, password } = req.body;
 
-    if(Nusuario == '' || usuario == '' || password == '' ){ 
-        return res.status(400).json({msg : 'Campo o campos incorrectos'})
+    if(Nusuario == null || usuario == null || password == null || Nusuario == '' || usuario == '' || password == ''){        
+        res.json({msg : 'Datos faltantes',error:true});
+        return
     }
     console.log('N. usuario: '+Nusuario)
     console.log('usuario: '+usuario)
@@ -24,14 +25,15 @@ export const registrarLogin = async (req,res) => {
         console.log(results)
         if(results.rowsAffected[0] != 0){
             console.log('Usuario creado')
-            res.send('Usuario creado')
+            res.json({msg : 'Usuario creado',error:false});
+            return
         }
         else{
-            res.send('Usuario no insertado')
+            res.json({msg : 'Usuario no insertado',error:true});
+            return
         }
 
-    } catch (error) {
-        res.status(500);
-        res.send(error.message);
+    } catch (error) { 
+        res.json({msg : 'Este usuario ya existe',error:true});
     }
 }

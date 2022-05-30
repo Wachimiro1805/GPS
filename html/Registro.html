@@ -29,11 +29,12 @@
 
 
   <!-- Custom styles for this template -->
-  <link href="../css/index.css" rel="stylesheet">
-  <link href="../css/login.css" rel="stylesheet">
+  <link href="/css/index.css" rel="stylesheet">
+  <link href="/css/login.css" rel="stylesheet">
+  <link href="/css/alerta.css" rel="stylesheet">
 </head>
 
-<body>
+<body id = 'body'>
 
   <nav class="navbar navbar-expand-md navbar-light fixed-top " style="background-color: #def7eb;">
     <div class="container-fluid">
@@ -54,10 +55,10 @@
             <a class="nav-link" href="/html/denuncias.html">Denuncias</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/html/estadisticas_User.html">Estadísticas</a>
+            <a class="nav-link" href="/html/estadisticas.html">Estadísticas</a>
           </li>
-          <li class="nav-item disabled">
-            <a id="btnRegistro" class="nav-link" href="/html/Registro.html">Crear usuario</a>
+          <li class="nav-item">
+            <a class="nav-link" href="/html/Registro.html">Crear usuario</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/html/Login.html"><img src="/images/icono.png" height="35"></a>
@@ -67,23 +68,28 @@
     </div>
   </nav>
   <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../script/registro.js" defer></script>
+  <!---->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!---->
   <main>
-    <form method="post" action="http://localhost:3000/registroLogin" class="formulario">
+    <!--<form method="post" action="http://localhost:3000/registroLogin" class="formulario">-->
+      <div class="formulario">
       <h1>Crear usuario administrador</h1>
       <div class="contenedor">
         <div class="input-contenedor">
-          <input name="Nusuario" type="text" placeholder="Nombre de usuario">
+          <input id='nombreU' name="Nusuario" type="text" placeholder="Nombre de usuario">
         </div>
         <div class="input-contenedor">
-            <input name="usuario" type="text" placeholder="Usuario">
+            <input id='usuario' name="usuario" type="text" placeholder="Usuario">
           </div>
         <div class="input-contenedor">
-          <input name="password" type="password" placeholder="Contraseña">
+          <input id='password' name="password" type="password" placeholder="Contraseña">
         </div>
-        <input type="submit" value="Registrar" class="button">
+        <button id='botonregistrar' class="button">Registrar </button>
 
       </div>
-    </form>
+    </div>
   </main>
 
 </html>
